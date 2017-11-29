@@ -18,3 +18,4 @@ These are markdown pages offering some notes about what linux-stable is, how you
 These kernels do not contain everything needed to boot and use the device as normal in their current form. Since these kernels are designed to be used as a base for others or merged into existing working kernels, those commits will not be added. Instead, I give notes that can be used to get everything working properly.
 
 - [`wahoo-usability.md`](wahoo-usability.md) Notes for the Pixel 2 and Pixel 2 XL kernel
+- [`op5-usability.md`](wahoo-usability.md) Notes for the OnePlus 5 kernel
