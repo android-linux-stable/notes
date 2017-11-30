@@ -125,3 +125,12 @@
   * **Resolution:** Take right side (shuffle resolution)
 
   * **Cause:** Commit [`2ecedf5dc75b`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=2ecedf5dc75bc770ec09bd2238e798063aeafc4b) ("sound: usb: Add support for parsing AudioStreaming intf for BADD devices") shuffled the function `snd_usb_create_streams`, which commit [`46c7b1fa4911`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=46c7b1fa4911a859a82575e3ffb55b34a89a222d) ("ALSA: usb-audio: Check out-of-bounds access by corrupted buffer descriptor") did not expect. Resolution is identical but has been moved into the `switch` statement to satisfy the changes made by CAF's shuffling.
+
+
+# 4.4.103
+
+* `fs/ext4/crypto_key.c`
+
+  * **Resolution:** Take right side (make final diff match upstream's)
+
+  * **Cause:** Commit [`b47135257c42`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=b47135257c42a70a26247b05ff0ab42b6ad8fc8a) ("Merge branch 'android-4.4@c71ad0f' into branch 'msm-4.4'") omitted commit [`7a5202190810`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=7a5202190810dde1467718235c1f650fcf57592a) ("fscrypt: remove broken support for detecting keyring key revocation"), which included the if statement right over the section that is modified by commit [`91bd72dd8c72`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=91bd72dd8c72c603132bbbfd348a4216b8c83f58) ("fscrypt: lock mutex before checking for bounce page pool").
