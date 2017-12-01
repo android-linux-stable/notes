@@ -36,7 +36,7 @@ These are notes for developers to help with merging linux-stable into their own 
 These kernels do not contain everything needed to boot and use the device as normal in their current form. Since these kernels are designed to be used as a base for others or merged into existing working kernels, those commits will not be added. Instead, I give notes that can be used to get everything working properly.
 
 - [`wahoo-usability.md`](wahoo-usability.md) for using the Pixel 2 and Pixel 2 XL kernel source
-- [`op5-usability.md`](wahoo-usability.md) for using the OnePlus 5 kernel source
+- [`op5-usability.md`](op5-usability.md) for using the OnePlus 5 kernel source
 
 Should you chose to merge, use the following commands:
 
