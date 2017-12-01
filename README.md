@@ -5,9 +5,9 @@ These are markdown pages offering some notes about what linux-stable is, how you
 
 # Index
 
-## Information about linux-stable
+## Information about linux-stable (for both users and developers)
 
-These are pages dedicated to answering what this stuff is and why it is important
+These are pages dedicated to answering what this stuff is and why it is important. Everyone should read these!
 
 - [`what-is-linux-stable.md`](what-is-linux-stable.md) gives an overview of what linux-stable is and how it came about.
 - [`why-is-linux-stable-important`](why-is-linus-stable-important.md) gives some reasons why this is important and addresses some of the excuses that people give for not caring about it (when they definitely should).
@@ -16,6 +16,7 @@ These are pages dedicated to answering what this stuff is and why it is importan
 ## How to update your kernel with linux-stable
 
 - [`how-to`](how-to.md) goes over the proper process for adding the latest linux-stable into your kernel.
+- [`tips-and-tricks.md`](tips-and-tricks.md) contains a few pointers and hints regarding this process.
 
 
 ## Conflict resolution notes
