@@ -5,6 +5,13 @@ These are markdown pages offering some notes about what linux-stable is, how you
 
 # Index
 
+## Information about linux-stable
+
+These are pages dedicated to answering what this stuff is and why it is important
+
+- [`what-is-linux-stable.md`](what-is-linux-stable.md) gives an overview of what linux-stable is and how it came about.
+
+
 ## Conflict resolution notes
 
 These are notes for developers to help with merging linux-stable into their own repos by documenting all of the conflicts, where they come from, and what was done to solve them. These repos are up to date with the latest linux-stable along with the latest commits from their OEMs.
@@ -14,6 +21,7 @@ These are notes for developers to help with merging linux-stable into their own 
 - [`op5-conflict-resolution.md`](op5-conflict-resolution.md) for the [op5-linux-stable](https://github.com/nathanchance/op5-linux-stable) repository (stock OP5 source, based on the [OOS Open Beta 1](https://github.com/OnePlusOSS/android_kernel_oneplus_msm8998/commits/oneplus/QC8998_O_8.0) branch).
 
 - [`wahoo-conflict-resolution.md`](wahoo-conflict-resolution.md) for the [wahoo-linux-stable](https://github.com/nathanchance/wahoo-linux-stable) repository (stock Pixel 2 and Pixel 2 source, based on the ([android-8.0.0_r0.28](https://android.googlesource.com/kernel/msm/+log/android-8.0.0_r0.28) tag).
+
 
 
 ## Usability notes
