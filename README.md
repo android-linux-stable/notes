@@ -7,18 +7,21 @@ These are markdown pages offering some notes about what linux-stable is, how you
 
 ## Conflict resolution notes
 
-- [`msm-4.4-conflict-resolution.md`](msm-4.4-conflict-resolution.md) These are the notes for all the conflicts in the [msm-4.4-linux-stable](https://github.com/nathanchance/msm-4.4-linux-stable) repository, which is plain CAF source with the latest linux-stable merged in.
+These are notes for developers to help with merging linux-stable into their own repos by documenting all of the conflicts, where they come from, and what was done to solve them. These repos are up to date with the latest linux-stable along with the latest commits from their OEMs.
 
-- [`op5-conflict-resolution.md`](op5-conflict-resolution.md) These are the notes for all the conflicts in the [op5-linux-stable](https://github.com/nathanchance/op5-linux-stable) repository, which is the stock OnePlus 5 source with the latest linux-stable merged in.
+- [`msm-4.4-conflict-resolution.md`](msm-4.4-conflict-resolution.md) for the [msm-4.4-linux-stable](https://github.com/nathanchance/msm-4.4-linux-stable) repository (stock CAF source, based on the [LA.UM.6.4.r1-04900-8x98.0](https://source.codeaurora.org/quic/la/kernel/msm-4.4/log/?h=LA.UM.6.4.r1-04900-8x98.0) tag).
 
-- [`wahoo-conflict-resolution.md`](wahoo-conflict-resolution.md) These are the notes for all the conflicts in the [wahoo-linux-stable](https://github.com/nathanchance/wahoo-linux-stable) repository, which is the stock Pixel 2 and Pixel 2 XL source with the latest linux-stable merged in (along with commits for proper compilation and usage).
+- [`op5-conflict-resolution.md`](op5-conflict-resolution.md) for the [op5-linux-stable](https://github.com/nathanchance/op5-linux-stable) repository (stock OP5 source, based on the [OOS Open Beta 1](https://github.com/OnePlusOSS/android_kernel_oneplus_msm8998/commits/oneplus/QC8998_O_8.0) branch).
+
+- [`wahoo-conflict-resolution.md`](wahoo-conflict-resolution.md) for the [wahoo-linux-stable](https://github.com/nathanchance/wahoo-linux-stable) repository (stock Pixel 2 and Pixel 2 source, based on the ([android-8.0.0_r0.28](https://android.googlesource.com/kernel/msm/+log/android-8.0.0_r0.28) tag).
+
 
 ## Usability notes
 
 These kernels do not contain everything needed to boot and use the device as normal in their current form. Since these kernels are designed to be used as a base for others or merged into existing working kernels, those commits will not be added. Instead, I give notes that can be used to get everything working properly.
 
-- [`wahoo-usability.md`](wahoo-usability.md) Notes for the Pixel 2 and Pixel 2 XL kernel
-- [`op5-usability.md`](wahoo-usability.md) Notes for the OnePlus 5 kernel
+- [`wahoo-usability.md`](wahoo-usability.md) for using the Pixel 2 and Pixel 2 XL kernel source
+- [`op5-usability.md`](wahoo-usability.md) for using the OnePlus 5 kernel source
 
 Should you chose to merge, use the following commands:
 
@@ -42,6 +45,7 @@ git remote add linux-stable https://git.kernel.org/pub/scm/linux/kernel/git/stab
 git fetch linux-stable
 git merge v<version>
 ```
+
 
 # Other notes
 
