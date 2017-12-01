@@ -10,6 +10,7 @@ These are markdown pages offering some notes about what linux-stable is, how you
 These are pages dedicated to answering what this stuff is and why it is important
 
 - [`what-is-linux-stable.md`](what-is-linux-stable.md) gives an overview of what linux-stable is and how it came about.
+- [`why-is-linux-stable-important`](why-is-linus-stable-important.md) gives some reasons why this is important and addresses some of the excuses that people give for not caring about it (when they definitely should).
 
 
 ## Conflict resolution notes
