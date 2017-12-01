@@ -13,6 +13,11 @@ These are pages dedicated to answering what this stuff is and why it is importan
 - [`why-is-linux-stable-important`](why-is-linus-stable-important.md) gives some reasons why this is important and addresses some of the excuses that people give for not caring about it (when they definitely should).
 
 
+## How to update your kernel with linux-stable
+
+- [`how-to`](how-to.md) goes over the proper process for adding the latest linux-stable into your kernel.
+
+
 ## Conflict resolution notes
 
 These are notes for developers to help with merging linux-stable into their own repos by documenting all of the conflicts, where they come from, and what was done to solve them. These repos are up to date with the latest linux-stable along with the latest commits from their OEMs.
