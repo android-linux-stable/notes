@@ -117,3 +117,12 @@
   * **Resolution:** Take right side (make final diff match upstream's)
 
   * **Cause:** Commit [`b47135257c42`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=b47135257c42a70a26247b05ff0ab42b6ad8fc8a) ("Merge branch 'android-4.4@c71ad0f' into branch 'msm-4.4'") omitted commit [`7a5202190810`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=7a5202190810dde1467718235c1f650fcf57592a) ("fscrypt: remove broken support for detecting keyring key revocation"), which included the if statement right over the section that is modified by commit [`91bd72dd8c72`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=91bd72dd8c72c603132bbbfd348a4216b8c83f58) ("fscrypt: lock mutex before checking for bounce page pool").
+
+
+# 4.4.104
+
+* `drivers/mmc/core/bus.c`
+
+  * **Resolution:** Take left side (discard all changes)
+
+  * **Cause:** Commit [`5c65b739389f`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=5c65b739389fbc353fb42d379e9b7379cfe6d3f6) ("mmc: core: Do not leave the block driver in a suspended state") was already resolved by [`192cfe16ca57`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=192cfe16ca5761bb7a5aafc016e79a21b2bd4002) ("mmc: bus: Handle error in case bus_ops suspend fails") but the latter has an extra comment block so git could not tell the fix was already present.
