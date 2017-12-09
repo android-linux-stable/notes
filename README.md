@@ -23,6 +23,8 @@ These are pages dedicated to answering what this stuff is and why it is importan
 
 These are notes for developers to help with merging linux-stable into their own repos by documenting all of the conflicts, where they come from, and what was done to solve them. These repos are up to date with the latest linux-stable along with the latest commits from their OEMs. The name of the file is the branch that the conflicts were fixed on. A new branch will be created when the upstream source adds a new one. New tags/updates will be merged into the branches when they appear on the upstream remote.
 
+- [`conflict-notes/marlin`](conflict-notes/marlin) for [the marlin repository](https://github.com/android-linux-stable/marlin) (stock Pixel (XL) source, currently based on the [android-msm-marlin-3.18-oreo-mr1](https://android.googlesource.com/kernel/msm/+log/android-msm-marlin-3.18-oreo-mr1) branch).
+
 - [`conflict-notes/msm-4.4`](conflict-notes/msm-4.4) for [the msm-4.4 repository](https://github.com/android-linux-stable/msm-4.4) (stock CAF 4.4 source, currently based on the [kernel.lnx.4.4.r18-rel](https://source.codeaurora.org/quic/la/kernel/msm-4.4/log/?h=kernel.lnx.4.4.r18-rel) branch).
 
 - [`conflict-notes/op5`](conflict-notes/op5) for [the op5 repository](https://github.com/android-linux-stable/op5) (stock OP5 source, currently based on the [OOS Open Beta 1](https://github.com/OnePlusOSS/android_kernel_oneplus_msm8998/commits/oneplus/QC8998_O_8.0) branch).
