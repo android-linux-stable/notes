@@ -1,4 +1,4 @@
-# 4.4.78 to 4.4.102
+# 4.4.78 to 4.4.105
 
 * `drivers/android/binder.c`
 
@@ -40,11 +40,25 @@
   * **Cause:** The power of 2 alignment check in commit [`b54e58ccceb7`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=b54e58ccceb794176b37037e76df3a7ed876b360) ("drm/msm: Ensure that the hardware write pointer is valid") is already present in commit [`378583458fa1`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=378583458fa167277b15d145dccce253459393ec) ("drm/msm: Add support for multiple ringbuffers") and there have been other changes to this section since then.
 
 
-* `drivers/net/wireless/ath/ath10k/core.c`
+* `drivers/mmc/core/bus.c`
 
   * **Resolution:** Take left side (discard all changes)
 
+  * **Cause:** Commit [`5c65b739389f`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=5c65b739389fbc353fb42d379e9b7379cfe6d3f6) ("mmc: core: Do not leave the block driver in a suspended state") was already resolved by [`192cfe16ca57`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=192cfe16ca5761bb7a5aafc016e79a21b2bd4002) ("mmc: bus: Handle error in case bus_ops suspend fails") but the latter has an extra comment block so git could not tell the fix was already present.
+
+
+* `drivers/net/wireless/ath/ath10k/core.c`
+
+  * **Resolution:** Take left side (discard conflict)
+
   * **Cause:** Commit [`2c65494080c9`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=2c65494080c900c8a0aa4a865b57a8001960ff26) ("ath10k: fix memory leak in rx ring buffer allocation") is already present as commit [`69a6025f67b4`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=69a6025f67b41a3b03e165db46ea7d346a45ae81) ("ath10k: fix memory leak in rx ring buffer allocation") and the former did not account for commit [`9eaeb4e0974b`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=9eaeb4e0974b976a037b7c55f0fe409bccbb7fdd) ("ath10k: fix spurious tx/rx during boot"), which was added by CAF to 4.4 (since it didn't appear upstream until v4.8-rc2).
+
+
+* `drivers/scsi/sg.c`
+
+  * **Solution:** Take both sides (make final diff match upstream's)
+
+  * **Cause:** Commit [`a4075bbb67b9`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=a4075bbb67b9562b9599affc6fb38f04bd7073ff) ("scsi: sg: protect accesses to 'reserved' page array") did not expect the mutex statement added by commit [`00d6789fbf2f`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=00d6789fbf2f1a371f8f80230e9a9eea35ef376e) ("Prevent potential double frees in sg driver").
 
 
 * `drivers/scsi/ufs/ufshcd.h`
@@ -54,11 +68,39 @@
   * **Cause:** Commit [`0c098158785b`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=0c098158785b5c8091c0bae3aa505060414076cc) ("scsi: ufs: add capability to keep auto bkops always enabled") is already present as commit [`9f06dddf5bee`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=9f06dddf5beecbcdf36535e0e587c23aaa7785f5) ("scsi: ufs: add capability to keep auto bkops always enabled") with a different shift value.
 
 
+* `drivers/usb/core/config.c`
+
+  * **Resolution:** Take both sides (make final diff match upstream's)
+
+  * **Cause:** Commit [`e5223a9107e5`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=e5223a9107e5ee250ad67ea4cb68eac7f1365e17) ("usb: core: Add support to parse config summary capability descriptors" added additional statements that commit [`ddaa1ae2eb7f`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=ddaa1ae2eb7ffb4e270fdc9593c3d1138f61fb31) ("usb: Add USB 3.1 Precision time measurement capability descriptor support") was not expecting to be there.
+
+
+* `fs/ext4/crypto_key.c`
+
+  * **Resolution:** Take right side (make final diff match upstream's)
+
+  * **Cause:** Commit [`b47135257c42`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=b47135257c42a70a26247b05ff0ab42b6ad8fc8a) ("Merge branch 'android-4.4@c71ad0f' into branch 'msm-4.4'") omitted commit [`7a5202190810`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=7a5202190810dde1467718235c1f650fcf57592a) ("fscrypt: remove broken support for detecting keyring key revocation"), which included the if statement right over the section that is modified by commit [`91bd72dd8c72`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=91bd72dd8c72c603132bbbfd348a4216b8c83f58) ("fscrypt: lock mutex before checking for bounce page pool").
+
+
 * `fs/f2fs/crypto_key.c`
 
   * **Resolution:** Take right side (mainline version)
 
   * **Cause:** Commit [`4db9f1113196`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=4db9f1113196e7b4df4e754e7e770b22aee81c01) ("f2fs crypto: replace some BUG_ON()'s with error checks") conflicts with commit [`26bf3dc7e25b`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=26bf3dc7e25b813ff5c92234f8165941fdc12a63) ("f2fs crypto: use per-inode tfm structure") because the latter is not in 4.4 upstream (it was added by CAF). Use the version from mainline, commit [`66aa3e1274fc`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=66aa3e1274fcf887e9d6501a68163270fc7718e7) ("f2fs crypto: replace some BUG_ON()'s with error checks").
+
+
+* `include/linux/usb.h`
+
+  * **Resolution:** Take both sides (make final diff match upstream's)
+
+  * **Cause:** Commit [`e5223a9107e5`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=e5223a9107e5ee250ad67ea4cb68eac7f1365e17) ("usb: core: Add support to parse config summary capability descriptors" added additional statements that commit [`ddaa1ae2eb7f`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=ddaa1ae2eb7ffb4e270fdc9593c3d1138f61fb31) ("usb: Add USB 3.1 Precision time measurement capability descriptor support") was not expecting to be there.
+
+
+* `include/uapi/linux/usb/ch9.h`
+
+  * **Resolution:** Take both sides (make final diff match upstream's)
+
+  * **Cause:** Commit [`e5223a9107e5`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=e5223a9107e5ee250ad67ea4cb68eac7f1365e17) ("usb: core: Add support to parse config summary capability descriptors" added additional statements that commit [`ddaa1ae2eb7f`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=ddaa1ae2eb7ffb4e270fdc9593c3d1138f61fb31) ("usb: Add USB 3.1 Precision time measurement capability descriptor support") was not expecting to be there.
 
 
 * `kernel/power/process.c`
@@ -67,11 +109,13 @@
 
   * **Cause:** Commit [`57caa2ad5ce3`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=57caa2ad5ce35bedb7ab374a2e5b4d7adf63da2b) ("power: Adds functionality to log the last suspend abort reason.") added an include, which was not expected by commit [`90fd6738731b`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=90fd6738731b6d105fc8f04832ae17a9ac82c05c) ("sched/cpuset/pm: Fix cpuset vs. suspend-resume bugs").
 
+
 * `kernel/sched/sched.h`
 
   * **Resolution:** Take left side (discard all changes)
 
   * **Cause:** Commit [`62208707b466`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=62208707b466cc3c6ce951a7c4b7b4bb9b9192f6) ("sched/cputime: Fix prev steal time accouting during CPU hotplug") is already present as commit [`3366a508ffb6`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=3366a508ffb6b0698dd309d1ca19a66522b886b1) ("Revert "sched/cputime: Fix steal time accounting vs. CPU hotplug"") and there have been a few commits to this section since then, namely commit [`f02702dcf231`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=f02702dcf231c3258aabd702023286f6c01aaa21) ("sched: backport cpufreq hooks from 4.9-rc4").
+
 
 * `mm/debug-pagealloc.c`
 
@@ -85,11 +129,13 @@
 
   * **Cause:** Commit [`e91e9112cb03`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=e91e9112cb03570cf572365bfdaeacd1c13a3dbd) ("mm, page_owner: copy page owner info during migration") added an include, which was not expected by commit [`46d51a26efbc`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=46d51a26efbc7cbaa2bc1f01628a00a604193856) ("Sanitize 'move_pages()' permission checks").
 
+
 * `mm/page_ext.c`
 
   * **Resolution:** Take right side
 
   * **Cause:** Commit [`2c00b603db67`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=2c00b603db67af40aa0b02c834cc58fec98d3023) ("mm/page_poisoning.c: allow for zero poisoning") added an extra condition to this block that commit [`3630b2801907`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=3630b28019075639a9db00491349e05fbf0f901e) ("mm/page_ext.c: check if page_ext is not prepared") did not expect.
+
 
 * `mm/page_owner.c`
 
@@ -97,32 +143,16 @@
 
   * **Cause:** Commit [`e34e744f70a6`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=e34e744f70a68f8f16f945a286802898c56a8b5a) ("mm: check the return value of lookup_page_ext for all call sites") is already present as commit [`acda305dcb54`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=acda305dcb5474a401753912db382358b3436ab9) ("mm: check the return value of lookup_page_ext for all call sites") and there have been several changes to this file since then.
 
+
 * `net/wireless/nl80211.c`
 
   * **Resolution:** Take left side
 
   * **Cause:** Commit [`6a6c61d8467d`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=6a6c61d8467d2dd7059b7d52773c18f8122e4f68) ("nl80211: Define policy for packet pattern attributes") is already present as commit [`b084c13dfb8f`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=b084c13dfb8f9081192dc7168a94d48f419d09fc) ("nl80211: Define policy for packet pattern attributes") and the former did not account for commit [`3fee1ede34a6`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=3fee1ede34a6c3b2dd7d816643e887c2308f6a78) ("nl80211: add feature for BSS selection support") being present.
 
+
 * `sound/usb/card.c`
 
   * **Resolution:** Take right side (shuffle resolution)
 
   * **Cause:** Commit [`2ecedf5dc75b`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=2ecedf5dc75bc770ec09bd2238e798063aeafc4b) ("sound: usb: Add support for parsing AudioStreaming intf for BADD devices") shuffled the function `snd_usb_create_streams`, which commit [`46c7b1fa4911`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=46c7b1fa4911a859a82575e3ffb55b34a89a222d) ("ALSA: usb-audio: Check out-of-bounds access by corrupted buffer descriptor") did not expect. Resolution is identical but has been moved into the `switch` statement to satisfy the changes made by CAF's shuffling.
-
-
-# 4.4.103
-
-* `fs/ext4/crypto_key.c`
-
-  * **Resolution:** Take right side (make final diff match upstream's)
-
-  * **Cause:** Commit [`b47135257c42`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=b47135257c42a70a26247b05ff0ab42b6ad8fc8a) ("Merge branch 'android-4.4@c71ad0f' into branch 'msm-4.4'") omitted commit [`7a5202190810`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=7a5202190810dde1467718235c1f650fcf57592a) ("fscrypt: remove broken support for detecting keyring key revocation"), which included the if statement right over the section that is modified by commit [`91bd72dd8c72`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=91bd72dd8c72c603132bbbfd348a4216b8c83f58) ("fscrypt: lock mutex before checking for bounce page pool").
-
-
-# 4.4.104
-
-* `drivers/mmc/core/bus.c`
-
-  * **Resolution:** Take left side (discard all changes)
-
-  * **Cause:** Commit [`5c65b739389f`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=5c65b739389fbc353fb42d379e9b7379cfe6d3f6) ("mmc: core: Do not leave the block driver in a suspended state") was already resolved by [`192cfe16ca57`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=192cfe16ca5761bb7a5aafc016e79a21b2bd4002) ("mmc: bus: Handle error in case bus_ops suspend fails") but the latter has an extra comment block so git could not tell the fix was already present.
