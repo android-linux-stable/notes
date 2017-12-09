@@ -9,34 +9,33 @@ These are markdown pages offering some notes about what linux-stable is, how you
 
 These are pages dedicated to answering what this stuff is and why it is important. Everyone should read these! If your kernel developer doesn't care for this process after reading this, they don't care about your security or stability...
 
-- [`what-is-linux-stable.md`](what-is-linux-stable.md) gives an overview of what linux-stable is and how it came about.
-- [`why-is-linux-stable-important`](why-is-linux-stable-important.md) gives some reasons why this is important and addresses some of the excuses that people give for not caring about it (when they definitely should).
+- [`info/what-is-linux-stable.md`](info/what-is-linux-stable.md) gives an overview of what linux-stable is and how it came about.
+- [`info/why-is-linux-stable-important.md`](info/why-is-linux-stable-important.md) gives some reasons why this is important and addresses some of the excuses that people give for not caring about it (when they definitely should).
 
 
 ## How to update your kernel with linux-stable
 
-- [`how-to`](how-to.md) goes over the proper process for adding the latest linux-stable into your kernel.
-- [`tips-and-tricks.md`](tips-and-tricks.md) contains a few pointers and hints regarding this process.
+- [`process/how-to.md`](process/how-to.md) goes over the proper process for adding the latest linux-stable into your kernel.
+- [`process/tips-and-tricks.md`](process/tips-and-tricks.md) contains a few pointers and hints regarding this process.
 
 
 ## Conflict resolution notes
 
-These are notes for developers to help with merging linux-stable into their own repos by documenting all of the conflicts, where they come from, and what was done to solve them. These repos are up to date with the latest linux-stable along with the latest commits from their OEMs.
+These are notes for developers to help with merging linux-stable into their own repos by documenting all of the conflicts, where they come from, and what was done to solve them. These repos are up to date with the latest linux-stable along with the latest commits from their OEMs. The name of the file is the branch that the conflicts were fixed on. A new branch will be created when the upstream source adds a new one. New tags/updates will be merged into the branches when they appear on the upstream remote.
 
-- [`msm-4.4-conflict-resolution.md`](msm-4.4-conflict-resolution.md) for the [msm-4.4-linux-stable](https://github.com/nathanchance/msm-4.4-linux-stable) repository (stock CAF source, based on the [LA.UM.6.4.r1-04900-8x98.0](https://source.codeaurora.org/quic/la/kernel/msm-4.4/log/?h=LA.UM.6.4.r1-04900-8x98.0) tag).
+- [`conflict-notes/msm-4.4`](conflict-notes/msm-4.4) for [the msm-4.4 repository](https://github.com/android-linux-stable/msm-4.4) (stock CAF 4.4 source, currently based on the [kernel.lnx.4.4.r18-rel](https://source.codeaurora.org/quic/la/kernel/msm-4.4/log/?h=kernel.lnx.4.4.r18-rel) branch).
 
-- [`op5-conflict-resolution.md`](op5-conflict-resolution.md) for the [op5-linux-stable](https://github.com/nathanchance/op5-linux-stable) repository (stock OP5 source, based on the [OOS Open Beta 1](https://github.com/OnePlusOSS/android_kernel_oneplus_msm8998/commits/oneplus/QC8998_O_8.0) branch).
+- [`conflict-notes/op5`](conflict-notes/op5) for [the op5 repository](https://github.com/android-linux-stable/op5) (stock OP5 source, currently based on the [OOS Open Beta 1](https://github.com/OnePlusOSS/android_kernel_oneplus_msm8998/commits/oneplus/QC8998_O_8.0) branch).
 
-- [`wahoo-conflict-resolution.md`](wahoo-conflict-resolution.md) for the [wahoo-linux-stable](https://github.com/nathanchance/wahoo-linux-stable) repository (stock Pixel 2 and Pixel 2 source, based on the ([android-8.0.0_r0.28](https://android.googlesource.com/kernel/msm/+log/android-8.0.0_r0.28) tag).
-
+- [`conflict-notes/wahoo`](conflict-notes/wahoo) for [the wahoo repository](https://github.com/android-linux-stable/wahoo) (stock Pixel 2 (XL) source, currently based on the [android-msm-wahoo-4.4-oreo-dr1](https://android.googlesource.com/kernel/msm/+log/android-msm-wahoo-4.4-oreo-dr1) branch).
 
 
 ## Usability notes
 
 These kernels do not contain everything needed to boot and use the device as normal in their current form. Since these kernels are designed to be used as a base for others or merged into existing working kernels, those commits will not be added. Instead, I give notes that can be used to get everything working properly.
 
-- [`wahoo-usability.md`](wahoo-usability.md) for using the Pixel 2 and Pixel 2 XL kernel source
-- [`op5-usability.md`](op5-usability.md) for using the OnePlus 5 kernel source
+- [`usability-notes/wahoo.md`](usability-notes/wahoo.md) for using the Pixel 2 and Pixel 2 XL kernel source
+- [`usability-notes/op5.md`](usability-notes/op5.md) for using the OnePlus 5 kernel source
 
 Should you chose to merge, use the following commands:
 
