@@ -27,8 +27,7 @@ These are notes for developers to help with merging linux-stable into their own 
 
 - [`conflict-notes/op5`](conflict-notes/op5) for [the op5 repository](https://github.com/android-linux-stable/op5) (stock OP5 source, currently based on the [OOS Open Beta 1](https://github.com/OnePlusOSS/android_kernel_oneplus_msm8998/commits/oneplus/QC8998_O_8.0) branch).
 
-- [`conflict-notes/wahoo`](conflict-notes/wahoo) for [the wahoo repository](https://github.com/android-linux-stable/wahoo) (stock Pixel 2 (XL) source, currently based on the [android-msm-wahoo-4.4-oreo-dr1](https://android.googlesource.com/kernel/msm/+log/android-msm-wahoo-4.4-oreo-dr1) branch).
-
+- [`conflict-notes/wahoo`](conflict-notes/wahoo) for [the wahoo repository](https://github.com/android-linux-stable/wahoo) (stock Pixel 2 (XL) source, currently based on the [android-msm-wahoo-4.4-oreo-mr1](https://android.googlesource.com/kernel/msm/+log/android-msm-wahoo-4.4-oreo-mr1) branch).
 
 ## Usability notes
 

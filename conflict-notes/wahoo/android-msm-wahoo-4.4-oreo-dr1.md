@@ -1,4 +1,4 @@
-# 4.4.78 to 4.4.102
+# 4.4.56 to 4.4.102
 
 * `arch/arm64/kernel/armv8_deprecated.c`
 
