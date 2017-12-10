@@ -25,6 +25,8 @@ These are notes for developers to help with merging linux-stable into their own 
 
 - [`conflict-notes/marlin`](conflict-notes/marlin) for [the marlin repository](https://github.com/android-linux-stable/marlin) (stock Pixel (XL) source, currently based on the [android-msm-marlin-3.18-oreo-mr1](https://android.googlesource.com/kernel/msm/+log/android-msm-marlin-3.18-oreo-mr1) branch).
 
+- [`conflict-notes/msm-3.18`](conflict-notes/msm-3.18) for [the msm-3.18 repository](https://github.com/android-linux-stable/msm-3.18) (stock CAF 3.18 source, currently based on the [kernel.lnx.3.18.r22-rel](https://source.codeaurora.org/quic/la/kernel/msm-3.18/log/?h=kernel.lnx.3.18.r22-rel) branch).
+
 - [`conflict-notes/msm-4.4`](conflict-notes/msm-4.4) for [the msm-4.4 repository](https://github.com/android-linux-stable/msm-4.4) (stock CAF 4.4 source, currently based on the [kernel.lnx.4.4.r18-rel](https://source.codeaurora.org/quic/la/kernel/msm-4.4/log/?h=kernel.lnx.4.4.r18-rel) branch).
 
 - [`conflict-notes/op5`](conflict-notes/op5) for [the op5 repository](https://github.com/android-linux-stable/op5) (stock OP5 source, currently based on the [OOS Open Beta 1](https://github.com/OnePlusOSS/android_kernel_oneplus_msm8998/commits/oneplus/QC8998_O_8.0) branch).
