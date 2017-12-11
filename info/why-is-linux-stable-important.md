@@ -63,7 +63,7 @@ Sure, there may even be patches in those folders that aren't run or built but th
 
 ### "There is a lot of breakage when merging and using linux-stable in my tree"
 
-In fact, within the three Android versions I have personally worked with (3.10, 3.18, 4.4), I have only had to revert a small handful of commits for various reasons. Yes, conflicts can sometimes be tricky to solve depending on the context but they are easily resolvable by looking at what was done to cause the conflict (using `git log` and `git blame`).
+In fact, within the three Linux versions I have personally worked with (3.10, 3.18, 4.4), I have only had to revert a small handful of commits for various reasons. Yes, conflicts can sometimes be tricky to solve depending on the context but they are easily resolvable by looking at what was done to cause the conflict (using `git log` and `git blame`).
 
 * 3.10: Only commit [`9a76e683b643`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?h=linux-3.10.y&id=9a76e683b64361450f3e331dd6634f5aa39ea51b) ("ASoC: compress: Fix compress device direction check") needed to be reverted, as it broke sound. For context, the Nexus 6P ships with a 3.10.73 kernel where as linux-stable is up to 3.10.108.
 ```bash
