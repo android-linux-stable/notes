@@ -1,4 +1,4 @@
-# 4.4.78 to 4.4.105
+ 4.4.78 to 4.4.105
 
 * `drivers/android/binder.c`
 
@@ -156,3 +156,12 @@
   * **Resolution:** Take right side (shuffle resolution)
 
   * **Cause:** Commit [`2ecedf5dc75b`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=2ecedf5dc75bc770ec09bd2238e798063aeafc4b) ("sound: usb: Add support for parsing AudioStreaming intf for BADD devices") shuffled the function `snd_usb_create_streams`, which commit [`46c7b1fa4911`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=46c7b1fa4911a859a82575e3ffb55b34a89a222d) ("ALSA: usb-audio: Check out-of-bounds access by corrupted buffer descriptor") did not expect. Resolution is identical but has been moved into the `switch` statement to satisfy the changes made by CAF's shuffling.
+
+
+# 4.4.106
+
+* `arch/arm/include/asm/kvm_arm.h`
+
+  * **Resolution:** Take right side (use mainline diff)
+
+  * **Cause:** When mainline commit [`5553b142be11`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=5553b142be11e794ebc0805950b2e8313f93d718) ("arm: KVM: Fix VTTBR_BADDR_MASK BUG_ON off-by-one") was backported as commit [`a5fa9efe4e01`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=a5fa9efe4e019e1f8f213142836c84f010cc4faf) ("arm: KVM: Fix VTTBR_BADDR_MASK BUG_ON off-by-one") in the 4.4 tree, it did not expect mainline commit [`8420dcd37ef3`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=8420dcd37ef34040c8fc5a27bf66887b3b2faf80) ("arm: KVM: Make kvm_arm.h friendly to assembly code") to be here, as it was introduced in 4.5. However, it is as commit [`516f3f777e5f`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=516f3f777e5fb0710f1626c79e3dacca751b8c30) ("arm: KVM: Make kvm_arm.h friendly to assembly code") so we can just use mainline's version.
