@@ -67,4 +67,4 @@ In order to get notified whenever there is an upstream update, subscribe to [the
 
 ## 6. Known problem commits
 
-See the [breakage section](https://github.com/nathanchance/linux-stable-notes/blob/info/why-is-linux-stable-important.md#there-is-a-lot-of-breakage-when-merging-and-using-linux-stable-in-my-tree) of the "why is linux-stable important?" page.
+See the [breakage section](/info/why-is-linux-stable-important.md#there-is-a-lot-of-breakage-when-merging-and-using-linux-stable-in-my-tree) of the "why is linux-stable important?" page.
