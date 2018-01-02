@@ -165,3 +165,12 @@
   * **Resolution:** Take right side (use mainline diff)
 
   * **Cause:** When mainline commit [`5553b142be11`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=5553b142be11e794ebc0805950b2e8313f93d718) ("arm: KVM: Fix VTTBR_BADDR_MASK BUG_ON off-by-one") was backported as commit [`a5fa9efe4e01`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=a5fa9efe4e019e1f8f213142836c84f010cc4faf) ("arm: KVM: Fix VTTBR_BADDR_MASK BUG_ON off-by-one") in the 4.4 tree, it did not expect mainline commit [`8420dcd37ef3`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=8420dcd37ef34040c8fc5a27bf66887b3b2faf80) ("arm: KVM: Make kvm_arm.h friendly to assembly code") to be here, as it was introduced in 4.5. However, it is as commit [`516f3f777e5f`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=516f3f777e5fb0710f1626c79e3dacca751b8c30) ("arm: KVM: Make kvm_arm.h friendly to assembly code") so we can just use mainline's version.
+
+
+# 4.4.109
+
+* `net/ipv4/raw.c`
+
+  * **Resolution:** Take right side (make final diff match upstream's)
+
+  * **Cause:** When mainline commit [`8f659a03a0ba`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=8f659a03a0ba9289b9aeb9b4470e6fb263d6f483) ("net: ipv4: fix for a race condition in raw_sendmsg") was backported to the 4.4 stable tree as commit [`be27b620a861`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=be27b620a861dc2a143b78e81e23f5622d9105da), it was slightly changed because mainline commit [`e2d118a1cb5e`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=e2d118a1cb5e60d077131a09db1d81b90a5295fe) ("net: inet: Support UID-based routing in IP protocols.") is not present in the stable 4.4 tree. However, since CAF merged kernel/common from Google, it is present as commit [`344afd627cca`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=344afd627cca0223464079135926f611fdbb0574) ("net: inet: Support UID-based routing in IP protocols.") so adjust the diff to account for this (final diff matches both the stable and mainline commit).

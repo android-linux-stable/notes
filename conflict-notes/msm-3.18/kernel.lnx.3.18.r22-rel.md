@@ -30,3 +30,19 @@
   * **Resolution:** Take right side (make diff match mainline's version)
 
   * **Cause:** Commit [`008ba2a13f2d`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=008ba2a13f2d04c947adc536d19debb8fe66f110) ("packet: hold bind lock when rebinding to fanout hook") was slightly modified for 3.18 as commit [`e4ffdf9ead59`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=e4ffdf9ead59a909f2824a4270356909d6d64380) ("packet: hold bind lock when rebinding to fanout hook") because commit [`d199fab63c11`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=d199fab63c11998a602205f7ee7ff7c05c97164b) ("packet: fix races in fanout_add()") is missing from 3.18. However, it is present in this tree as commit [`be671c7e1745`](https://source.codeaurora.org/quic/la/kernel/msm-3.18/commit/?id=be671c7e17454b4f144a8e05268a6071748a8791) ("UPSTREAM: packet: fix races in fanout_add()") so use the upstream resolution.
+
+
+# 3.18.91
+
+* `drivers/net/usb/qmi_wwan.c`, `drivers/usb/core/quirks.c`, and `drivers/usb/serial/option.c`
+
+  * **Resolution:** Take right side (make final diff match upstream's)
+
+  * **Cause:** The changes to these file were omitted by CAF during the merge up to 3.18.71 (every merge commit message states that USB changes were completely ignored).
+
+
+* `net/ipv4/raw.c`
+
+  * **Resolution:** Take right side (make final diff match upstream's)
+
+  * **Cause:** When mainline commit [`8f659a03a0ba`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=8f659a03a0ba9289b9aeb9b4470e6fb263d6f483) ("net: ipv4: fix for a race condition in raw_sendmsg") was backported to the 3.18 stable tree as commit [`000c7141a1fe`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=000c7141a1feace09bf4c0f65008e51fa69ecede), it was slightly changed because mainline commit [`e2d118a1cb5e`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=e2d118a1cb5e60d077131a09db1d81b90a5295fe) ("net: inet: Support UID-based routing in IP protocols.") is not present in the stable 3.18 tree. However, since CAF merged kernel/common from Google, it is present as commit [`04c0eace816f`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=04c0eace816f2b2c33830ec7f5e882de674841ae) ("net: inet: Support UID-based routing in IP protocols.") so adjust the diff to account for this (final diff matches both the stable and mainline commit).
