@@ -72,3 +72,12 @@
   * **Resolution:** Take right side (make final diff match upstream's)
 
   * **Cause:** When mainline commit [`8f659a03a0ba`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=8f659a03a0ba9289b9aeb9b4470e6fb263d6f483) ("net: ipv4: fix for a race condition in raw_sendmsg") was backported to the 4.4 stable tree as commit [`be27b620a861`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=be27b620a861dc2a143b78e81e23f5622d9105da), it was slightly changed because mainline commit [`e2d118a1cb5e`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=e2d118a1cb5e60d077131a09db1d81b90a5295fe) ("net: inet: Support UID-based routing in IP protocols.") is not present in the stable 4.4 tree. However, it is in this one since Google added it as a backport in commit [`b8ebf03fc6a9`](https://android.googlesource.com/kernel/msm/+/b8ebf03fc6a9cee79cb71a2921953425fdee8e97) ("net: inet: Support UID-based routing in IP protocols.") so adjust the diff to account for this (final diff matches both the stable and mainline commit).
+
+
+# 4.4.110
+
+* `kernel/fork.c`
+
+  * **Resolution:** Modified right side (adjust context)
+
+  * **Cause:** The changes to `kernel/fork.c` (viewable by running `git log v4.4.109..v4.4.110 kernel/fork.c`) had to be adjusted for Google's addition of commit [`059eb79ae99a`](https://android.googlesource.com/kernel/msm/+/059eb79ae99a798c2d7424e763d4e1ef335fa4db) ("UPSTREAM: Clarify naming of thread info/stack allocators"). Final diff matches what was merged into Google's 4.4 kernel/common branch by Greg Kroah-Hartman.

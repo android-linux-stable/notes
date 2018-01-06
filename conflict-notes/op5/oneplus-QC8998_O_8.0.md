@@ -189,3 +189,12 @@
   * **Resolution:** Take right side (make final diff match upstream's)
 
   * **Cause:** When mainline commit [`8f659a03a0ba`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=8f659a03a0ba9289b9aeb9b4470e6fb263d6f483) ("net: ipv4: fix for a race condition in raw_sendmsg") was backported to the 4.4 stable tree as commit [`be27b620a861`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=be27b620a861dc2a143b78e81e23f5622d9105da), it was slightly changed because mainline commit [`e2d118a1cb5e`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=e2d118a1cb5e60d077131a09db1d81b90a5295fe) ("net: inet: Support UID-based routing in IP protocols.") is not present in the stable 4.4 tree. However, since CAF merged kernel/common from Google, it is present as commit [`344afd627cca`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=344afd627cca0223464079135926f611fdbb0574) ("net: inet: Support UID-based routing in IP protocols.") so adjust the diff to account for this (final diff matches both the stable and mainline commit).
+
+
+# 4.4.110
+
+* `kernel/fork.c`
+
+  * **Resolution:** Take both sides
+
+  * **Cause:** The commits to `kernel/fork.c` (viewable by running `git log v4.4.109..v4.4.110 kernel/fork.c`) were not expecting the changes from commit [`dae9a397e1d3`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=dae9a397e1d3d92b6f44f248972350cbc16828b5) ("kernel: fork: Call KASan alloc before release the thread info pages").
