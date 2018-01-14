@@ -4,7 +4,7 @@
 
 While I cannot possibly teach you how to resolve every conflict given that a lot of that involves understanding C, I can give you some helpful hints about how I resolve conflicts.
 
-* Figure out if you already have the commit. Some vendors like Google or CAF will attempt to look upstream for critical bugs, like the Dirty COW fix, and their backports could conflict with upstream's. You cand run `git log --grep="<part_of_commit_message>"` and see if it returns anything. If it does, you can skip the commit (if cherry-picking using `git reset --hard && git cherry-pick --continue`) or ignore the conflicts (remove the `<<<<<<` and everything between the `======` and `>>>>>>`).
+* Figure out if you already have the commit. Some vendors like Google or CAF will attempt to look upstream for critical bugs, like the Dirty COW fix, and their backports could conflict with upstream's. You can run `git log --grep="<part_of_commit_message>"` and see if it returns anything. If it does, you can skip the commit (if cherry-picking using `git reset --hard && git cherry-pick --continue`) or ignore the conflicts (remove the `<<<<<<` and everything between the `======` and `>>>>>>`).
 * Read what the commit is trying to do and see if the problem is already fixed. Sometimes CAF may fix a bug independent of upstream, meaning you can either overwrite their fix for upstream's or discard it, like above.
 
 Otherwise, it may just be a result of a CAF/Google/OEM addition, in which case you just need to shuffle some things around.
