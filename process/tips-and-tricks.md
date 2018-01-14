@@ -4,7 +4,17 @@
 
 While I cannot possibly teach you how to resolve every conflict given that a lot of that involves understanding C, I can give you some helpful hints about how I resolve conflicts.
 
+
+* If you are merging, figure out what commit is causing the conflict. You can do this one of two ways:
+
+  * `git log -p v$(make kernelversion)..<latest_tag>` to get the changes between your current version and the latest from upstream. The `-p` flag will give you the changes done by each commit so you can see.
+
+  * Run `git blame` on the file to get the hashes of each commit in the area. You can then run `git show --format=fuller` to see if the committer was from mainline/stable, Google, or CodeAurora.
+
 * Figure out if you already have the commit. Some vendors like Google or CAF will attempt to look upstream for critical bugs, like the Dirty COW fix, and their backports could conflict with upstream's. You can run `git log --grep="<part_of_commit_message>"` and see if it returns anything. If it does, you can skip the commit (if cherry-picking using `git reset --hard && git cherry-pick --continue`) or ignore the conflicts (remove the `<<<<<<` and everything between the `======` and `>>>>>>`).
+
+* Figure out if there has been a backport that is messing up resolution. Google and CAF like to backport certain patches that stable wouldn't. Stable will often need to adapt the resolution of the mainline commit to the abscence of certain patches that Google opts to backport. You can look at the mainline commit by running `git show <hash>` (the mainline hash will be available in the commit message of the stable commit). If there is a backport messing it up, you can either discard the changes or you can use the mainline version (which is what you will usually need to do).
+
 * Read what the commit is trying to do and see if the problem is already fixed. Sometimes CAF may fix a bug independent of upstream, meaning you can either overwrite their fix for upstream's or discard it, like above.
 
 Otherwise, it may just be a result of a CAF/Google/OEM addition, in which case you just need to shuffle some things around.
@@ -20,7 +30,13 @@ git log <current_version>..<version_being_added> <path>
 git show <hash>
 ```
 
-Solving resolutions is all about context.
+Solving resolutions is all about context. What you should ALWAYS do is make sure your final diff matches upstream's by running the following commands in two separate windows:
+
+```bash
+git diff HEAD
+
+git diff v$(make kernelversion)..$(git tag --sort=-taggerdate -l v$(make kernelversion | cut -d . -f 1,2)* | head -n1)
+```
 
 
 ## 2. Enable rerere
