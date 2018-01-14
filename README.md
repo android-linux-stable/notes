@@ -63,6 +63,8 @@ git fetch linux-stable
 git merge v<version>
 ```
 
+If you prefer to do things yourself, you can use [the script](https://github.com/android-linux-stable/script) to assist with adding linux-stable to your repos and staying up to date.
+
 
 # Other notes
 
