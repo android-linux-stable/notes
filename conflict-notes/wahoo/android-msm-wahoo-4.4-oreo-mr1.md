@@ -90,3 +90,12 @@
   * **Resolution:** Take right side (make final diff match upstream's with one note below)
 
   * **Cause:** When mainline commit [`fbc7c07ec23c`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=fbc7c07ec23c040179384a1f16b62b6030eb6bdd) ("dm bufio: fix shrinker scans when (nr_to_scan < retain_target)") was backported to the 4.4 tree as commit [`cbb1cc722aaa`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=cbb1cc722aaa9f55b6fa3f8f9be7635652ddc2ae) ("dm bufio: fix shrinker scans when (nr_to_scan < retain_target)"), it was modified to work around the absence of mainline commit [`d12067f428c0`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=d12067f428c037b4575aaeb2be00847fc214c24a) ("dm bufio: don't take the lock in dm_bufio_shrink_count"). However, it is present in this tree as commit [`e3c2e858b996`](https://android.googlesource.com/kernel/msm/+/e3c2e858b996e0c1d9bc3e3702c7160ec5385215) ("BACKPORT: dm bufio: don't take the lock in dm_bufio_shrink_count"). Take the mainline diff and modify it to use ACCESS_ONCE instead of READ_ONCE due to lack of mainline commit [`6aa7de059173`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=6aa7de059173a986114ac43b8f50b297a86f09a8) ("locking/atomics: COCCINELLE/treewide: Convert trivial ACCESS_ONCE() patterns to READ_ONCE()/WRITE_ONCE()").
+
+
+# 4.4.113
+
+* `arch/x86/include/asm/thread_info.h`
+
+  * **Resolution:** Take right side (make final diff match upstream's)
+
+  * **Cause:** The addition of commit [`fdb92b0de361`]((https://android.googlesource.com/kernel/msm/+/fdb92b0de361f9043f359a1de52e2bedd9da4599) ("mm: Implement stack frame object validation") prevented git from cleanly applying stable commit [`cfc8c1d61e46`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=cfc8c1d61e46fd3c60a34a5b1962eeeb03222a3d) ("x86/asm: Use register variable to get stack pointer value").

@@ -183,3 +183,12 @@
   * **Resolution:** Take both sides
 
   * **Cause:** The commits to `kernel/fork.c` (viewable by running `git log v4.4.109..v4.4.110 kernel/fork.c`) were not expecting the changes from commit [`dae9a397e1d3`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=dae9a397e1d3d92b6f44f248972350cbc16828b5) ("kernel: fork: Call KASan alloc before release the thread info pages").
+
+
+# 4.4.113
+
+* `arch/x86/include/asm/thread_info.h`
+
+  * **Resolution:** Take right side (make final diff match upstream's)
+
+  * **Cause:** The addition of commit [`fdb92b0de361`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=fdb92b0de361f9043f359a1de52e2bedd9da4599) ("mm: Implement stack frame object validation") prevented git from cleanly applying stable commit [`cfc8c1d61e46`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=cfc8c1d61e46fd3c60a34a5b1962eeeb03222a3d) ("x86/asm: Use register variable to get stack pointer value").
