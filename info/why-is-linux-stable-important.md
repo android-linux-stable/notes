@@ -91,7 +91,7 @@ This can be true, especially for a bring up like 4.4.21 to 4.4.102. However, whe
 
 ### "I'm secure enough with Google and CAF's patches" OR "We merge in all relevant CVEs"
 
-Not all fixes are labeled as security vulnerabilities even though they may be discovered to be so later on. Also, Google and CAF do not find all the relevant bug and security fixes in upstream. Just in the security update which I linked above, there was a critical security fix in a kernel released in July that was not released to the public via an Android security update until December. There are plenty of other instances where that happens. Greg Kroah-Hartman states it best in [his Kernel Recipes 2017 talk](https://youtu.be/RKadXpQLmPU?t=24m26s) and [a Google+ post regarding CVEs](). Be sensible and merge everything.
+Not all fixes are labeled as security vulnerabilities even though they may be discovered to be so later on. Also, Google and CAF do not find all the relevant bug and security fixes in upstream. Just in the security update which I linked above, there was a critical security fix in a kernel released in July that was not released to the public via an Android security update until December. There are plenty of other instances where that happens. Greg Kroah-Hartman states it best in [his Kernel Recipes 2017 talk](https://youtu.be/RKadXpQLmPU?t=24m26s) and [a Google+ post regarding CVEs](https://plus.google.com/+gregkroahhartman/posts/EyRv8WjbWqR). Be sensible and merge everything.
 
 
 ## Demonstration
