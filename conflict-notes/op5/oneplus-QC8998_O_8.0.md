@@ -207,3 +207,12 @@
   * **Resolution:** Take right side (make final diff match upstream's)
 
   * **Cause:** The addition of commit [`fdb92b0de361`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=fdb92b0de361f9043f359a1de52e2bedd9da4599) ("mm: Implement stack frame object validation") prevented git from cleanly applying stable commit [`cfc8c1d61e46`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=cfc8c1d61e46fd3c60a34a5b1962eeeb03222a3d) ("x86/asm: Use register variable to get stack pointer value").
+
+
+# 4.4.115
+
+* `drivers/usb/gadget/function/f_fs.c`
+
+  * **Resolution:** Take left side (discard all changes)
+
+  * **Cause:** Stable commit [`68b43caf4a4b`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=68b43caf4a4b98256bdb67dba025f858bdf21725) ("usb: f_fs: Prevent gadget unbind if it is already unbound") is already present as commit [`35fdb9cd7e90`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=35fdb9cd7e90c08ac9697fa330e4e290b9d34f8a) ("usb: f_fs: Prevent gadget unbind if it is already unbound") with a slightly different resolution so it could not be cleanly resolved.
