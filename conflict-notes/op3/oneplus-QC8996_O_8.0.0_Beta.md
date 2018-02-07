@@ -73,3 +73,19 @@
   * **Resolution:** Take right side
 
   * **Cause:** The history of 3.18.65 that contained stable commit [`74926bfeaf9b`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=74926bfeaf9bab3f6a6bedaef5ff79d32bd38c1a) ("net: sched: set xt_tgchk_param par.nft_compat as 0 in ipt_init_target") was lost in OnePlus commit [`326c14d87412`](https://github.com/OnePlusOSS/android_kernel_oneplus_msm8996/commit/326c14d87412a5e1f6c5090010f8657901191169) ("Synchronize codes for OP3_O2_Open_27 && OP3T_O2_Open_1"), causing the application of stable commit [`28ae858736a4`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=28ae858736a42b37ff4352e3cb46e4a9e9299d2f) ("net: sched: fix NULL pointer dereference when action calls some targets") to fail.
+
+
+# 3.18.94
+
+* `drivers/input/input.c`
+
+  * **Resolution:** Take left side (discard all changes)
+
+  * **Cause:** Commit [`33fd368597ad`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=33fd368597ad615f9f7232ca9daa3ed3fdba1516) is already present in this tree as commit [`b7e92bfe94d1`](https://source.codeaurora.org/quic/la/kernel/msm-3.18/commit?id=b7e92bfe94d17178fea6c12552ab5fbafd48ad96) but git couldn't tell because the context of the stable version was adjusted due to absence of mainline commit [`3e2b03dad54b`](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=3e2b03dad54bbcab5be948629a644d55ce7b5a2e), which is present in our tree as commit [`f4497aed6014`](https://source.codeaurora.org/quic/la/kernel/msm-3.18/commit?id=f4497aed6014730521b7736db0139ebb6fadeee5). The version in our tree is identical to mainline commit [`00159f19a505`](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=00159f19a5057cb779146afce1cceede692af346) so no changes are necessary.
+
+
+* `drivers/usb/gadget/function/f_fs.c`
+
+  * **Resolution:** Take left side (discard all changes)
+
+  * **Cause:** Commit [`3e6a2db8df25`](https://source.codeaurora.org/quic/la/kernel/msm-3.18/commit?id=3e6a2db8df258fc6d609a2827d0e0cbe30fbbce0) removed the statement modified by stable commmit [`512b79f1410f`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=512b79f1410fd05c2c7f2aab9fb4b0050560db89).
