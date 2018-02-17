@@ -216,3 +216,12 @@
   * **Resolution:** Take left side (discard all changes)
 
   * **Cause:** Stable commit [`68b43caf4a4b`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=68b43caf4a4b98256bdb67dba025f858bdf21725) ("usb: f_fs: Prevent gadget unbind if it is already unbound") is already present as commit [`35fdb9cd7e90`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=35fdb9cd7e90c08ac9697fa330e4e290b9d34f8a) ("usb: f_fs: Prevent gadget unbind if it is already unbound") with a slightly different resolution so it could not be cleanly resolved.
+
+
+# 4.4.116
+
+* `fs/f2fs/namei.c`
+
+  * **Resolution:** Take left side (discard all changes)
+
+  * **Cause:** The f2fs part of stable commit [`076e4ab3279e`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=076e4ab3279eb3ddb206de44d04df7aeb2428e09) ("don't put symlink bodies in pagecache into highmem") is already present in the f2fs changes brought in by OnePlus's initial squash in commit [`3ea92be08321`](https://github.com/OnePlusOSS/android_kernel_oneplus_msm8998/commit/3ea92be083217b1aac8b4c328e3469bbb9cff73c) ("Synchronize codes for OnePlus5 O OPEN BETA 1 kernel device tree source code for OnePlus 5 O device") and the additional changes to that file prevented a clean resolution.
