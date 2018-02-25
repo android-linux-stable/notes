@@ -225,3 +225,18 @@
   * **Resolution:** Take left side (discard all changes)
 
   * **Cause:** The f2fs part of stable commit [`076e4ab3279e`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=076e4ab3279eb3ddb206de44d04df7aeb2428e09) ("don't put symlink bodies in pagecache into highmem") is already present in the f2fs changes brought in by OnePlus's initial squash in commit [`3ea92be08321`](https://github.com/OnePlusOSS/android_kernel_oneplus_msm8998/commit/3ea92be083217b1aac8b4c328e3469bbb9cff73c) ("Synchronize codes for OnePlus5 O OPEN BETA 1 kernel device tree source code for OnePlus 5 O device") and the additional changes to that file prevented a clean resolution.
+
+
+# 4.4.118
+
+  * `net/Kconfig`
+
+    * **Resolution:** Take both sides (make final diff match upstream's)
+
+    * **Cause:** Stable commit [`d365b297433c`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=d365b297433cf2969fa94f243d7afddc073c7bf1) ("net: add dst_cache support") was not expecting the change to this file from commit [`016c030cc678`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=016c030cc67882b2143fc8098afa471c8bf33bdf) ("net: ipc_router: Add snapshot of IPC Router") to be present.
+
+  * `net/core/Makefile`
+
+    * **Resolution:** Take both sides (make final diff match upstream's)
+
+    * **Cause:** Stable commit [`d365b297433c`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=d365b297433cf2969fa94f243d7afddc073c7bf1) ("net: add dst_cache support") was not expecting the change to this file from commit [`274f3cfdd0a0`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=274f3cfdd0a0a14a73b510405cc6fc91abee74e0) ("net: sockev: Initial Commit") to be present.

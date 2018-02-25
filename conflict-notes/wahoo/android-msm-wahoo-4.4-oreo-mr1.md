@@ -108,3 +108,18 @@
   * **Resolution:** Take left side (discard all changes)
 
   * **Cause:** Stable commit [`68b43caf4a4b`](https://android.googlesource.com/kernel/msm/+/68b43caf4a4b98256bdb67dba025f858bdf21725) ("usb: f_fs: Prevent gadget unbind if it is already unbound") is already present as commit [`35fdb9cd7e90`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=35fdb9cd7e90c08ac9697fa330e4e290b9d34f8a) ("usb: f_fs: Prevent gadget unbind if it is already unbound") with a slightly different resolution so it could not be cleanly resolved.
+
+
+# 4.4.118
+
+  * `net/Kconfig`
+
+    * **Resolution:** Take both sides (make final diff match upstream's)
+
+    * **Cause:** Stable commit [`d365b297433c`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=d365b297433cf2969fa94f243d7afddc073c7bf1) ("net: add dst_cache support") was not expecting the change to this file from commit [`016c030cc678`](https://android.googlesource.com/kernel/msm/+/016c030cc67882b2143fc8098afa471c8bf33bdf) ("net: ipc_router: Add snapshot of IPC Router") to be present.
+
+  * `net/core/Makefile`
+
+    * **Resolution:** Take both sides (make final diff match upstream's)
+
+    * **Cause:** Stable commit [`d365b297433c`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=d365b297433cf2969fa94f243d7afddc073c7bf1) ("net: add dst_cache support") was not expecting the change to this file from commit [`274f3cfdd0a0`](https://android.googlesource.com/kernel/msm/+/274f3cfdd0a0a14a73b510405cc6fc91abee74e0) ("net: sockev: Initial Commit") to be present.
