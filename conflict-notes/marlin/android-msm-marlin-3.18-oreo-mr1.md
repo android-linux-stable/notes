@@ -37,3 +37,12 @@
   * **Resolution:** Take left side (discard all changes)
 
   * **Cause:** Commit [`3e6a2db8df25`](https://android.googlesource.com/kernel/msm/+/3e6a2db8df258fc6d609a2827d0e0cbe30fbbce0) removed the statement modified by stable commmit [`512b79f1410fd`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=512b79f1410fd05c2c7f2aab9fb4b0050560db89).
+
+
+# 3.18.97
+
+* `drivers/usb/dwc3/gadget.c`
+
+  * **Resolution:** Take both sides (make final diff match upstream's)
+
+  * **Cause:** Stable commit [`0b10a48805f9`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=0b10a48805f99a5a27ae8eda6a1d20601f23a9b5) ("usb: dwc3: gadget: Set maxpacket size for ep0 IN") wasn't expecting the `pr_info` statement added by commit [`1cb23126f5d8`](https://android.googlesource.com/kernel/msm/+/1cb23126f5d8b2fa62434d25d3d7ce6b33a7fbd1) ("usb: fusb302: pd chip bring up").
