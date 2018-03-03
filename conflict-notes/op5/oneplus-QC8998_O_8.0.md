@@ -240,3 +240,12 @@
     * **Resolution:** Take both sides (make final diff match upstream's)
 
     * **Cause:** Stable commit [`d365b297433c`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=d365b297433cf2969fa94f243d7afddc073c7bf1) ("net: add dst_cache support") was not expecting the change to this file from commit [`274f3cfdd0a0`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=274f3cfdd0a0a14a73b510405cc6fc91abee74e0) ("net: sockev: Initial Commit") to be present.
+
+
+# 4.4.120
+
+* `fs/f2fs/extent_cache.c`
+
+  * **Resolution:** Take modified right side (make final diff match the mainline version)
+
+  * **Cause:** OnePlus has included the f2fs mainline backports provided by Jaeguk Kim in [the f2fs-stable repo](https://git.kernel.org/pub/scm/linux/kernel/git/jaegeuk/f2fs-stable.git/), meaning we need to take [the mainline version](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=dad48e73127ba10279ea33e6dbc8d3905c4d31c0) of stable commit [`023ca5b884d2`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=023ca5b884d2759b56dc8d480942835881853513) ("f2fs: fix a bug caused by NULL extent tree").
