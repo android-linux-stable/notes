@@ -31,7 +31,7 @@ These are notes for developers to help with merging linux-stable into their own 
 
 - [`conflict-notes/op3`](conflict-notes/op3) for [the op3 repository](https://github.com/android-linux-stable/op3) (stock OP3 source, currently offering both the [Open Beta](https://github.com/OnePlusOSS/android_kernel_oneplus_msm8998/commits/oneplus/QC8996_O_8.0.0_Beta) and [stable](https://github.com/OnePlusOSS/android_kernel_oneplus_msm8996/commits/oneplus/QC8996_O_8.0.0) branches).
 
-- [`conflict-notes/op5`](conflict-notes/op5) for [the op5 repository](https://github.com/android-linux-stable/op5) (stock OP5 source, currently based on the [OOS Open Beta 1](https://github.com/OnePlusOSS/android_kernel_oneplus_msm8998/commits/oneplus/QC8998_O_8.0) branch).
+- [`conflict-notes/op5`](conflict-notes/op5) for [the op5 repository](https://github.com/android-linux-stable/op5) (stock OP5 source, currently based on the [OOS Open Beta 4/6](https://github.com/OnePlusOSS/android_kernel_oneplus_msm8998/commits/oneplus/QC8998_O_8.1) branch).
 
 - [`conflict-notes/wahoo`](conflict-notes/wahoo) for [the wahoo repository](https://github.com/android-linux-stable/wahoo) (stock Pixel 2 (XL) source, currently based on the [android-msm-wahoo-4.4-oreo-mr1](https://android.googlesource.com/kernel/msm/+log/android-msm-wahoo-4.4-oreo-mr1) branch).
 
