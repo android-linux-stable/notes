@@ -1,46 +1,42 @@
 # linux-stable notes
 
-These are markdown pages offering some notes about what linux-stable is, how you should be using it, and issue resolution notes.
+These are markdown pages offering some notes about what linux-stable is, how you should be using it, and issue resolution notes. Please read this whole page if nothing else!
 
 
 # Index
 
-## Information about linux-stable (for both users and developers)
 
-These are pages dedicated to answering what this stuff is and why it is important. Everyone should read these! If your kernel developer doesn't care for this process after reading this, they don't care about your security or stability...
+* `info:` These are pages dedicated to answering what this stuff is and why it is important. Both users and developers should read these! If your kernel developer doesn't care for this process after reading this, they don't care about your security or stability...
 
-- [`info/what-is-linux-stable.md`](info/what-is-linux-stable.md) gives an overview of what linux-stable is and how it came about.
-- [`info/why-is-linux-stable-important.md`](info/why-is-linux-stable-important.md) gives some reasons why this is important and addresses some of the excuses that people give for not caring about it (when they definitely should).
+* `process:` This section goes over how to get a kernel up to date with linux-stable, step by step, as well as providing helpful tips and tricks.
 
+* `conflict-notes:` These pages document resolutions of all the conflicts during each merge, including why the conflict occurred and how it was resolved.
 
-## How to update your kernel with linux-stable
+* `usability-notes:` Some of these trees do not contain everything needed to boot and use the device as normal in their current form. Since these kernels are designed to be used as a base for others or merged into existing working kernels, those commits will not be added. Instead, I give notes that can be used to get everything working properly.
 
-- [`process/how-to.md`](process/how-to.md) goes over the proper process for adding the latest linux-stable into your kernel.
-- [`process/tips-and-tricks.md`](process/tips-and-tricks.md) contains a few pointers and hints regarding this process.
+Each subfolder has its own index if you want more details!
 
 
-## Conflict resolution notes
+# Available trees
 
-These are notes for developers to help with merging linux-stable into their own repos by documenting all of the conflicts, where they come from, and what was done to solve them. These repos are up to date with the latest linux-stable along with the latest commits from their OEMs. The name of the file is the branch that the conflicts were fixed on. A new branch will be created when the upstream source adds a new one. New tags/updates will be merged into the branches when they appear on the upstream remote.
+Each tree will have both OEM and linux-stable updates merged promptly. The branch the tree is based on will be the same as its name upstream.
 
-- [`conflict-notes/marlin`](conflict-notes/marlin) for [the marlin repository](https://github.com/android-linux-stable/marlin) (stock Pixel (XL) source, currently based on the [android-msm-marlin-3.18-oreo-mr1](https://android.googlesource.com/kernel/msm/+log/android-msm-marlin-3.18-oreo-mr1) branch).
+* [Essential Phone](https://github.com/android-linux-stable/mata) ([upstream source](https://github.com/LineageOS/android_kernel_essential_msm8998))
+* [msm-3.18](https://github.com/android-linux-stable/msm-3.18) ([upstream source](https://source.codeaurora.org/quic/la/kernel/msm-3.18))
+* [msm-4.4](https://github.com/android-linux-stable/msm-4.4) ([upstream source](https://source.codeaurora.org/quic/la/kernel/msm-4.4))
+* [OnePlus 3 and 3T](https://github.com/android-linux-stable/op3) ([upstream source](https://github.com/OnePlusOSS/android_kernel_oneplus_msm8996))
+* [OnePlus 5 and 5T](https://github.com/android-linux-stable/op5) ([upstream source](https://github.com/OnePlusOSS/android_kernel_oneplus_msm8998))
+* [Pixel and Pixel XL](https://github.com/android-linux-stable/marlin) ([upstream source](https://android.googlesource.com/kernel/msm/))
+* [Pixel 2 and Pixel 2 XL](https://github.com/android-linux-stable/wahoo) ([upstream source](https://android.googlesource.com/kernel/msm/))
 
-- [`conflict-notes/msm-3.18`](conflict-notes/msm-3.18) for [the msm-3.18 repository](https://github.com/android-linux-stable/msm-3.18) (stock CAF 3.18 source, currently based on the [kernel.lnx.3.18.r22-rel](https://source.codeaurora.org/quic/la/kernel/msm-3.18/log/?h=kernel.lnx.3.18.r22-rel) branch).
+The lineage-15.1 branches will not have conflict notes but they generally follow the MSM trees.
 
-- [`conflict-notes/msm-4.4`](conflict-notes/msm-4.4) for [the msm-4.4 repository](https://github.com/android-linux-stable/msm-4.4) (stock CAF 4.4 source, currently based on the [kernel.lnx.4.4.r27-rel](https://source.codeaurora.org/quic/la/kernel/msm-4.4/log/?h=kernel.lnx.4.4.r27-rel) branch).
+If you are a custom kernel or ROM developer with a 3.18 or 4.4 kernel and want linux-stable merged into your repo(s), please let me know on either [Telegram](https://t.me/nathanchance), [Twitter](https://twitter.com/nathanchance), or [XDA](https://forum.xda-developers.com/member.php?u=6842057). I am happy to merge it into your trees and either pull request you or ping you with updates automatically.
 
-- [`conflict-notes/op3`](conflict-notes/op3) for [the op3 repository](https://github.com/android-linux-stable/op3) (stock OP3 source, currently offering both the [Open Beta](https://github.com/OnePlusOSS/android_kernel_oneplus_msm8998/commits/oneplus/QC8996_O_8.0.0_Beta) and [stable](https://github.com/OnePlusOSS/android_kernel_oneplus_msm8996/commits/oneplus/QC8996_O_8.0.0) branches).
 
-- [`conflict-notes/op5`](conflict-notes/op5) for [the op5 repository](https://github.com/android-linux-stable/op5) (stock OP5 source, currently based on the [OOS Open Beta 4/6](https://github.com/OnePlusOSS/android_kernel_oneplus_msm8998/commits/oneplus/QC8998_O_8.1) branch).
+## How to use them
 
-- [`conflict-notes/wahoo`](conflict-notes/wahoo) for [the wahoo repository](https://github.com/android-linux-stable/wahoo) (stock Pixel 2 (XL) source, currently based on the [android-msm-wahoo-4.4-oreo-mr1](https://android.googlesource.com/kernel/msm/+log/android-msm-wahoo-4.4-oreo-mr1) branch).
-
-## Usability notes
-
-These kernels do not contain everything needed to boot and use the device as normal in their current form. Since these kernels are designed to be used as a base for others or merged into existing working kernels, those commits will not be added. Instead, I give notes that can be used to get everything working properly.
-
-- [`usability-notes/wahoo.md`](usability-notes/wahoo.md) for using the Pixel 2 and Pixel 2 XL kernel source
-- [`usability-notes/op5.md`](usability-notes/op5.md) for using the OnePlus 5 kernel source
+These trees can either be merged into an existing tree or they can be used as a starting base.
 
 Should you chose to merge, use the following commands:
 
@@ -52,12 +48,24 @@ git merge FETCH_HEAD
 Should you chose to use the kernel as a base for your own, either fork the kernel or run the following in an existing kernel repo:
 
 ```bash
-git fetch <repo_url> <branch>
-git branch -b <branch_name> FETCH_HEAD
-git push --set-upstream origin <branch_name>
+git fetch <android-linux-stable_repo_url> <branch_to_use>
+git branch -b <your_branch_name> FETCH_HEAD
+git push --set-upstream origin <your_branch_name>
 ```
 
-This will keep commit history and make it easier to keep up with updates. You can either merge the updates from this tree by using the merge commands above or add linux stable as a remote and merge changes from there:
+This will keep commit history and make it easier to keep up with updates.
+
+
+## Getting updates
+
+You can merge the updates from this organization by using the merge command:
+
+```bash
+git fetch <repo_url> <branch>
+git merge FETCH_HEAD
+```
+
+If you want to do the merges yourself, you can add linux-stable as a remote and merge the tag:
 
 ```bash
 git remote add linux-stable https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/
@@ -65,7 +73,7 @@ git fetch linux-stable
 git merge v<version>
 ```
 
-If you prefer to do things yourself, you can use [the script](https://github.com/android-linux-stable/script) to assist with adding linux-stable to your repos and staying up to date.
+You can use [the script](https://github.com/android-linux-stable/script) to do this automatically.
 
 
 # Other notes
