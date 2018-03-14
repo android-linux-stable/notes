@@ -23,7 +23,7 @@ Lastly, as stated in the [what is linux-stable](what-is-linux-stable.md), these 
 
 ## Lots of investment behind it
 
-First and foremost, the Linux kernel is the biggest software development project in the world and many many companies contribute to it, like Redhat, Intel, Google, Facebook, and many more. In fact, Google has been working with Greg to get these stable releases into their common Android kernel on the [android-3.18 branch](https://android-review.googlesource.com/q/project:kernel%252Fcommon+branch:android-3.18+owner:%2522Greg+Kroah-Hartman+%253Cgregkh%2540google.com%253E%2522+is:merged+into+android-3.18), [android-4.4 branch](https://android-review.googlesource.com/q/project:kernel%252Fcommon+branch:android-4.4+owner:%2522Greg+Kroah-Hartman+%253Cgregkh%2540google.com%253E%2522+is:merged+into+android-4.4), and [android-4.9 branch](https://android-review.googlesource.com/q/project:kernel%252Fcommon+branch:android-4.9+owner:%2522Greg+Kroah-Hartman+%253Cgregkh%2540google.com%253E%2522+is:merged+into+android-4.9), which are in turn merged into Qualcomm's vendor kernel trees. Chromium also merges stable updates into their [chromeos-4.4](https://chromium.googlesource.com/chromiumos/third_party/kernel/+log/chromeos-4.4) and [chromeos-4.14](https://chromium.googlesource.com/chromiumos/third_party/kernel/+log/chromeos-4.14) branches. If they weren't confident these releases weren't 100% stable or worthwhile, they wouldn't put the effort (and by extension, money) behind it. Facebook has stated that they upgrade their servers with the stable kernels and experience no issues when doing so. Furthermore, by companies merging in these updates, they can help with testing and figuring out issues.
+First and foremost, the Linux kernel is the biggest software development project in the world and many many companies contribute to it, like Redhat, Intel, Google, Facebook, and many more. In fact, Google has been working with Greg to get these stable releases into their common Android kernel on the [android-3.18 branch](https://android.googlesource.com/kernel/common/+log/android-3.18/Makefile), [android-4.4 branch](https://android.googlesource.com/kernel/common/+log/android-4.4/Makefile), [android-4.9 branch](https://android.googlesource.com/kernel/common/+log/android-4.9/Makefile), and [android-4.14 branch](https://android.googlesource.com/kernel/common/+log/android-4.14/Makefile), which are in turn merged into Qualcomm's vendor kernel trees. They have also been merging it into their Pixel devices ([marlin](https://android.googlesource.com/kernel/msm/+log/android-msm-marlin-3.18-oreo-mr1/Makefile) and [wahoo](https://android.googlesource.com/kernel/msm/+log/android-msm-wahoo-4.4-oreo-mr1/Makefile)). Chromium merges stable updates into their [chromeos-4.4](https://chromium.googlesource.com/chromiumos/third_party/kernel/+log/chromeos-4.4) and [chromeos-4.14](https://chromium.googlesource.com/chromiumos/third_party/kernel/+log/chromeos-4.14) branches. If they weren't confident these releases weren't 100% stable or worthwhile, they wouldn't put the effort (and by extension, money) behind it. Facebook has stated that they upgrade their servers with the stable kernels and experience no issues when doing so. Furthermore, by companies merging in these updates, they can help with testing and figuring out issues.
 
 
 ## Get fixes as soon as they are available
@@ -41,20 +41,20 @@ There are certainly others I could find but the point is ignore CVEs, the fixes 
 
 ### "Most of the fixes are for architectures/drivers we don't use/run"
 
-Depending on your version of "mostly", this is true. There is a lot of code Android doesn't use in the Linux kernel. However, that means there will be no conflicts from those files when merging new version! Nobody builds every single part of the kernel, not even your most common distributions like Ubuntu or Mint. It doesn't mean you shouldn't be taking these fixes because there ARE fixes for drivers you DO run. Take arm/arm64 and ext4 for example, which are the most common Android architecture and file system respectively. In 4.4, from 4.4.21 (version of the latest Nougat CAF tag) to 4.4.103 (latest upstream tag), these are the following numbers for the commits of those systems:
+Depending on your version of "mostly", this is true. There is a lot of code Android doesn't use in the Linux kernel. However, that means there will be no conflicts from those files when merging new version! Nobody builds every single part of the kernel, not even your most common distributions like Ubuntu or Mint. It doesn't mean you shouldn't be taking these fixes because there ARE fixes for drivers you DO run. Take arm/arm64 and ext4 for example, which are the most common Android architecture and file system respectively. In 4.4, from 4.4.78 (version of the latest Oreo CAF tag) to 4.4.121 (latest upstream tag), these are the following numbers for the commits of those systems:
 
 ```bash
-nathan@flashbox ~/kernels/linux-stable (master) $ git log --format=%h v4.4.21..v4.4.103 | wc -l
-3599
+nathan@flashbox ~/kernels/linux-stable (master) $ git log --format=%h v4.4.78..v4.4.121 | wc -l
+2285
 
-nathan@flashbox ~/kernels/linux-stable (master) $ git log --format=%h v4.4.21..v4.4.103 arch/arm | wc -l
-91
+nathan@flashbox ~/kernels/linux-stable (master) $ git log --format=%h v4.4.78..v4.4.121 arch/arm | wc -l
+58
 
-nathan@flashbox ~/kernels/linux-stable (master) $ git log --format=%h v4.4.21..v4.4.103 arch/arm64 | wc -l
-45
+nathan@flashbox ~/kernels/linux-stable (master) $ git log --format=%h v4.4.78..v4.4.121 arch/arm64 | wc -l
+22
 
-nathan@flashbox ~/kernels/linux-stable (master) $ git log --format=%h v4.4.21..v4.4.103 fs/ext4 | wc -l
-63
+nathan@flashbox ~/kernels/linux-stable (master) $ git log --format=%h v4.4.78..v4.4.121 fs/ext4 | wc -l
+18
 ```
 
 Sure, there may even be patches in those folders that aren't run or built but that blanket statement is false. A quote from Greg Kroah-Hartman...
@@ -71,23 +71,41 @@ nathan@flashbox ~/kernels/linux-stable (master) $ git log --format=%h v3.10.73..
 2337
 ```
 
-* 3.18: Only commit [`08b1ade02e58`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?h=linux-3.18.y&id=08b1ade02e584ac5eb8d9c075debf202bed9d085) ("pinctrl: qcom: Don't clear status bit on irq_unmask") needed to be reverted, done by CAF in commit [`8b4f04992b06`](https://source.codeaurora.org/quic/la/kernel/msm-3.18/commit?id=8b4f04992b064cb0c6d78adc2c2593f1aec92773) ("pinctrl: qcom: Clear status bit on irq_unmask"). The OnePlus 3 ships with a 3.18.31 kernel on Nougat where as linux-stable is up to 3.18.85.
+* 3.18: There have been no major regressions between 3.18.71 (latest available version from CAF) and 3.18.99 (latest version upstream)
+
 ```bash
-nathan@flashbox ~/kernels/linux-stable (master) $ git log --format=%h v3.18.31..v3.18.85 | wc -l
-2394
+nathan@flashbox ~/kernels/linux-stable (master) $ git log --format=%h v3.18.71..v3.18.99 | wc -l
+957
 ```
 
-* 4.4: Only commit [`800791e7e0fd`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?h=linux-4.4.y&id=800791e7e0fd9835be2f55c55147c379888b7442) ("pinctrl: qcom: Don't clear status bit on irq_unmask") and commit [`e2968fb8e798`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?h=linux-4.4.y&id=e2968fb8e7980dccc199dac2593ad476db20969f) ("ext4: require encryption feature for EXT4_IOC_SET_ENCRYPTION_POLICY") needed to be reverted. The former was done by Google in commit [`7d16e880c625`](https://android.googlesource.com/kernel/common/+/7d16e880c62547936b431cde966d17e39e6e92e0) ("Revert "ext4: require encryption feature for EXT4_IOC_SET_ENCRYPTION_POLICY"") and the latter was done by CAF in commit [`ce9e5bde6654`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=ce9e5bde6654677cb61c4685f5f164d89cba2a0b) ("pinctrl: qcom: Clear status bit on irq_unmask"). The OnePlus 5 and 5T ship with a 4.4.21 kernel on Nougat where as linux-stable is up to 4.4.103.
+There was only one regression between 3.18.31 and 3.18.99: commit [`08b1ade02e58`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?h=linux-3.18.y&id=08b1ade02e584ac5eb8d9c075debf202bed9d085) ("pinctrl: qcom: Don't clear status bit on irq_unmask") needed to be reverted, done by CAF in commit [`8b4f04992b06`](https://source.codeaurora.org/quic/la/kernel/msm-3.18/commit?id=8b4f04992b064cb0c6d78adc2c2593f1aec92773) ("pinctrl: qcom: Clear status bit on irq_unmask").
+
 ```bash
-nathan@flashbox ~/kernels/linux-stable (master) $ git log --format=%h v4.4.21..v4.4.103 | wc -l
-3599
+nathan@flashbox ~/kernels/linux-stable (master) $ git log --format=%h v3.18.31..v3.18.99 | wc -l
+2935
+```
+
+* 4.4: There have been no major regressions between 4.4.78 (latest available version from CAF) and 4.4.121 (latest version upstream)
+
+```bash
+nathan@flashbox ~/kernels/linux-stable (master) $ git log --format=%h v4.4.78..v4.4.121 | wc -l
+2285
+```
+
+There were only two regressions between 4.4.21 and 4.4.121: commit [`800791e7e0fd`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?h=linux-4.4.y&id=800791e7e0fd9835be2f55c55147c379888b7442) ("pinctrl: qcom: Don't clear status bit on irq_unmask") and commit [`e2968fb8e798`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?h=linux-4.4.y&id=e2968fb8e7980dccc199dac2593ad476db20969f) ("ext4: require encryption feature for EXT4_IOC_SET_ENCRYPTION_POLICY") needed to be reverted. The former was done by Google in commit [`7d16e880c625`](https://android.googlesource.com/kernel/common/+/7d16e880c62547936b431cde966d17e39e6e92e0) ("Revert "ext4: require encryption feature for EXT4_IOC_SET_ENCRYPTION_POLICY"") and the latter was done by CAF in commit [`ce9e5bde6654`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=ce9e5bde6654677cb61c4685f5f164d89cba2a0b) ("pinctrl: qcom: Clear status bit on irq_unmask").
+
+```bash
+nathan@flashbox ~/kernels/linux-stable (master) $ git log --format=%h v4.4.21..v4.4.121 | wc -l
+4828
 ```
 
 Those numbers don't lie: out of two to three thousand commits, there is almost next to zero breakage when merging in linux-stable and furthermore, git has built-in tools to easily deal with breakage (namely `git bisect`) so dealing with issues is not that difficult at all. Guenter Roeck, who works for Google on the Chromium kernels, has publicly stated that merging the 4.4 and 4.14 releases has resulted in very very few regressions ([source](https://lkml.org/lkml/2018/2/7/464)).
 
+
 ### "It takes too much time/effort"
 
-This can be true, especially for a bring up like 4.4.21 to 4.4.102. However, when I first did it for the OnePlus 5, it probably took me an evening (like 4-5 hours). The most time consuming part is the initial bring up; once you are all the way up to date, it takes no time at all to merge in a new release, which usually contains no more than 100 commits. The benefits that this brings (more stability and better security for your users) should necessitate this process though.
+This can be true, especially for a bring up like 4.4.78 to 4.4.121. However, when I first did it for the OnePlus 5, it probably took me an evening (like 4-5 hours). The most time consuming part is the initial bring up; once you are all the way up to date, it takes no time at all to merge in a new release, which usually contains no more than 100 commits. The benefits that this brings (more stability and better security for your users) should necessitate this process though.
+
 
 ### "I'm secure enough with Google and CAF's patches" OR "We merge in all relevant CVEs"
 
