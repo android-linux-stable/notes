@@ -8,10 +8,53 @@ The Wahoo kernel source Google provides needs a few modifications to get it to w
     * [`ada01ae47140`](https://github.com/nathanchance/wahoo/commit/ada01ae4714044a9986b56dad0babcd6d5d8a3b8) ("walleye: Allow stock modules to load")
     * [`1a4f1c84b7cc`](https://github.com/nathanchance/wahoo/commit/1a4f1c84b7cca5559ab49b2be62be9b95e2c2408) ("taimen: allow stock modules to load")
 
-  * Build the drivers into the kernel image (ignore the changes to `kernel/module.c` and apply `arch/arm64/configs/flash_defconfig` changes to `arch/arm64/configs/wahoo_defconfig`)
-    * [`d2fad78d365d`](https://github.com/nathanchance/wahoo/commit/d2fad78d365d1f4ff162acc34313c974d6f254b6) ("De-modularize touchscreen drivers")
-    * [`0b40e12c1b69`](https://github.com/nathanchance/wahoo/commit/0b40e12c1b692671bc1fab84b06dc5cea80c7709) ("power: {lge,htc}_battery: Use late_initcall instead of module_initcall")
-    * [`94feaf233f83`](https://github.com/nathanchance/wahoo/commit/94feaf233f83654df82eef7acda50b42e8781d37) ("De-modularize battery drivers")
+  * Build the drivers into the kernel image. Apply the following changes depending on your device:
+
+    * Pixel 2:
+
+        * Change from `=m` to `=y` in wahoo_defconfig
+
+          ```
+          CONFIG_TOUCHSCREEN_SYNAPTICS_DSX_HTC=y
+          CONFIG_TOUCHSCREEN_SYNAPTICS_DSX_CORE_HTC=y
+          CONFIG_TOUCHSCREEN_SYNAPTICS_DSX_RMI_DEV_HTC=y
+          CONFIG_TOUCHSCREEN_SYNAPTICS_DSX_FW_UPDATE_HTC=y
+          CONFIG_HTC_BATTERY=y
+          ```
+
+        * Delete in wahoo_defconfig
+
+          ```
+          CONFIG_LGE_TOUCH_CORE=y
+          CONFIG_LGE_TOUCH_LGSIC_SW49408=y
+          CONFIG_TOUCHSCREEN_FTM4=y
+          CONFIG_LGE_BATTERY=y
+          ```
+
+
+    * Pixel 2 XL:
+
+        * Change from `=m` to `=y` in wahoo_defconfig
+
+          ```
+          CONFIG_LGE_TOUCH_CORE=y
+          CONFIG_LGE_TOUCH_LGSIC_SW49408=y
+          CONFIG_TOUCHSCREEN_FTM4=y
+          CONFIG_LGE_BATTERY=y
+          ```
+
+        * Delete in wahoo_defconfig
+
+          ```
+          CONFIG_TOUCHSCREEN_SYNAPTICS_DSX_HTC=y
+          CONFIG_TOUCHSCREEN_SYNAPTICS_DSX_CORE_HTC=y
+          CONFIG_TOUCHSCREEN_SYNAPTICS_DSX_RMI_DEV_HTC=y
+          CONFIG_TOUCHSCREEN_SYNAPTICS_DSX_FW_UPDATE_HTC=y
+          CONFIG_HTC_BATTERY=y
+          ```
+
+       * Apply [`117ffa9fe699`](https://github.com/nathanchance/wahoo/commit/117ffa9fe6994b82604c71f93332537e362f3cb7) ("lge_battery: Use EPROBE_DEFER instead of ENODEV during probe")
+
 
 * Google compiles the stock kernel with Clang 4.0 on 8.0 and Clang 5.0 on 8.1. As a result, the typical kernel commands like for GCC change a bit. Additionally, they also require the versions of `dtc` and `mkdtimg` provided by AOSP. I go over how this changes your compilation in the README of [my pixel2-manifest repo](https://github.com/nathanchance/pixel2-manifest).
 
