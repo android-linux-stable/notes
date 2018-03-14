@@ -44,7 +44,7 @@ Cons:
 * Resolving conflicts can be a bit more difficult as you will need to look up which commit is causing the conflict using `git log`/`git blame`, it will not directly tell you.
 * Rebasing is difficult as you cannot rebase a merge, it will offer to cherry-pick all of the commit individually. However, you should not be rebasing often, instead using `git revert` and `git merge` where possible.
 
-I would recommend doing a cherry-pick to figure out any problem conflicts then do a merge then revert the problem commits afterwards so updating is easier (as merging is quicker after being up to date).
+I would recommend doing a cherry-pick to figure out any problem conflicts initially, doing a merge, then revert the problem commits afterwards so updating is easier (as merging is quicker after being up to date).
 
 
 ## 4. Add the commits into your source, one version at a time
