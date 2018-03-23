@@ -123,3 +123,12 @@
     * **Resolution:** Take both sides (make final diff match upstream's)
 
     * **Cause:** Stable commit [`d365b297433c`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=d365b297433cf2969fa94f243d7afddc073c7bf1) ("net: add dst_cache support") was not expecting the change to this file from commit [`274f3cfdd0a0`](https://android.googlesource.com/kernel/msm/+/274f3cfdd0a0a14a73b510405cc6fc91abee74e0) ("net: sockev: Initial Commit") to be present.
+
+
+# 4.4.124
+
+* `drivers/gpu/drm/msm/msm_gem.c`
+
+  * **Resolution:** Take both sides (make final diff match upstream's)
+
+  * **Cause:** Commit [`a808f9895c87`](https://android.googlesource.com/kernel/msm/+/a808f9895c87773833650271eb7c5281fbc0d8ff) ("drm/msm: Use dma_sync_sg_for_device() to flush cache for new buffers") changed one of the sections modified by stable commit [`c1b1c1af967a`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=c1b1c1af967a4890c88da05d5412a286ab72af5c) ("drm/msm: fix leak in failed get_pages"), requiring a slight context change.

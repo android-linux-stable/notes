@@ -89,3 +89,12 @@
   * **Resolution:** Take left side (discard all changes)
 
   * **Cause:** Commit [`3e6a2db8df25`](https://source.codeaurora.org/quic/la/kernel/msm-3.18/commit?id=3e6a2db8df258fc6d609a2827d0e0cbe30fbbce0) removed the statement modified by stable commmit [`512b79f1410f`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=512b79f1410fd05c2c7f2aab9fb4b0050560db89).
+
+
+# 3.18.102
+
+* `drivers/gpu/drm/msm/msm_gem.c`
+
+  * **Resolution:** Take left side (discard all changes)
+
+  * **Cause:** Commits [`46a5a5fd5fff`](https://source.codeaurora.org/quic/la/kernel/msm-3.18/commit/?id=46a5a5fd5fffffaebfe1867396af0d653375c053) ("drm:msm move GEM back buffer from SHMEM to DMA") and [`a47d70392fcd`](https://source.codeaurora.org/quic/la/kernel/msm-3.18/commit/?id=a47d70392fcdf0cf55daff156164e984383d63ff) ("drm:msm Fix issue of iommu unmap fails") heavily changed the area modified by stable commit [`1fa04de1af73`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=1fa04de1af7354d6cb795ed47bee2194ea9c8a17) ("drm/msm: fix leak in failed get_pages").

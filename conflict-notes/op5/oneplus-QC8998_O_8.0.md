@@ -249,3 +249,18 @@
   * **Resolution:** Take modified right side (make final diff match the mainline version)
 
   * **Cause:** OnePlus has included the f2fs mainline backports provided by Jaeguk Kim in [the f2fs-stable repo](https://git.kernel.org/pub/scm/linux/kernel/git/jaegeuk/f2fs-stable.git/), meaning we need to take [the mainline version](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=dad48e73127ba10279ea33e6dbc8d3905c4d31c0) of stable commit [`023ca5b884d2`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=023ca5b884d2759b56dc8d480942835881853513) ("f2fs: fix a bug caused by NULL extent tree").
+
+
+# 4.4.124
+
+* `drivers/gpu/drm/msm/msm_gem.c`
+
+  * **Resolution:** Take left side (discard all changes)
+
+  * **Cause:** Stable commit [`c1b1c1af967a`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=c1b1c1af967a4890c88da05d5412a286ab72af5c) ("drm/msm: fix leak in failed get_pages") is already present in this tree as commit [`0bcaa07af26c`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=0bcaa07af26c3748fe4f838f69f2234b047bdb25) ("drm/msm: fix leak in failed get_pages"). Due to changes around each husk, git couldn't give a clean resolution.
+
+* `drivers/net/wireless/ath/regd.c`
+
+  * **Resolution:** Take modified right side (make final diff match upstream's)
+
+  * **Cause:** Commit [`92072eb888a2`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=92072eb888a2117ac532a4bf44a70e4a443d3075) ("ath10k: Update world regulatory rules") trivially conflicts with commit [`597457667513`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=59745766751331bb82f471eef388e810b79eb5a4) ("ath: Fix updating radar flags for coutry code India"). Make the two coexist.

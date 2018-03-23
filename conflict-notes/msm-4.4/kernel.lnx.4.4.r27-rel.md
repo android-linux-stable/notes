@@ -216,3 +216,18 @@
     * **Resolution:** Take both sides (make final diff match upstream's)
 
     * **Cause:** Stable commit [`d365b297433c`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=d365b297433cf2969fa94f243d7afddc073c7bf1) ("net: add dst_cache support") was not expecting the change to this file from commit [`274f3cfdd0a0`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=274f3cfdd0a0a14a73b510405cc6fc91abee74e0) ("net: sockev: Initial Commit") to be present.
+
+
+# 4.4.124
+
+* `drivers/gpu/drm/msm/msm_gem.c`
+
+  * **Resolution:** Take left side (discard all changes)
+
+  * **Cause:** Stable commit [`c1b1c1af967a`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=c1b1c1af967a4890c88da05d5412a286ab72af5c) ("drm/msm: fix leak in failed get_pages") is already present in this tree as commit [`0bcaa07af26c`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=0bcaa07af26c3748fe4f838f69f2234b047bdb25) ("drm/msm: fix leak in failed get_pages"). Due to changes around each husk, git couldn't give a clean resolution.
+
+* `drivers/net/wireless/ath/regd.c`
+
+  * **Resolution:** Take modified right side (make final diff match upstream's)
+
+  * **Cause:** Commit [`92072eb888a2`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=92072eb888a2117ac532a4bf44a70e4a443d3075) ("ath10k: Update world regulatory rules") trivially conflicts with commit [`597457667513`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=59745766751331bb82f471eef388e810b79eb5a4) ("ath: Fix updating radar flags for coutry code India"). Make the two coexist.
