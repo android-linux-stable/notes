@@ -231,3 +231,12 @@
   * **Resolution:** Take modified right side (make final diff match upstream's)
 
   * **Cause:** Commit [`92072eb888a2`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=92072eb888a2117ac532a4bf44a70e4a443d3075) ("ath10k: Update world regulatory rules") trivially conflicts with commit [`597457667513`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=597457667513e7412989e3395044ac7ae8c2d9fb) ("ath: Fix updating radar flags for coutry code India"). Make the two coexist.
+
+
+# 4.4.125
+
+* `arch/arm64/mm/mmu.c`
+
+  * **Resolution:** Take both sides (make final diff match upstream's)
+
+  * **Cause:** The backport of mainline commit [`b6bdb7517c3d`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=b6bdb7517c3d3f41f20e5c2948d6bc3f8897394e) ("mm/vmalloc: add interfaces to free unmapped page table"), stable commit [`31895cfd7956`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=31895cfd79564111cdd5a9f48c5d491ae26a238e) ("mm/vmalloc: add interfaces to free unmapped page table"), was not expecting commit [`324420bf91f6`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=324420bf91f60582bb481133db9547111768ef17) ("arm64: add support for ioremap() block mappings") to be present; however, it is in this tree as commit [`37cbc7db8e4f`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=37cbc7db8e4fa9b66e15cf8661383a6b51c9a3e7) ("arm64: add support for ioremap() block mappings") so adjust the context to match mainline's version.

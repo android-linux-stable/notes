@@ -132,3 +132,12 @@
   * **Resolution:** Take both sides (make final diff match upstream's)
 
   * **Cause:** Commit [`a808f9895c87`](https://android.googlesource.com/kernel/msm/+/a808f9895c87773833650271eb7c5281fbc0d8ff) ("drm/msm: Use dma_sync_sg_for_device() to flush cache for new buffers") changed one of the sections modified by stable commit [`c1b1c1af967a`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=c1b1c1af967a84e986a9e893b4eebf6f7a40045c) ("drm/msm: fix leak in failed get_pages"), requiring a slight context change.
+
+
+# 4.4.125
+
+* `arch/arm64/mm/mmu.c`
+
+  * **Resolution:** Take both sides (make final diff match upstream's)
+
+  * **Cause:** The backport of mainline commit [`b6bdb7517c3d`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=b6bdb7517c3d3f41f20e5c2948d6bc3f8897394e) ("mm/vmalloc: add interfaces to free unmapped page table"), stable commit [`31895cfd7956`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=31895cfd79564111cdd5a9f48c5d491ae26a238e) ("mm/vmalloc: add interfaces to free unmapped page table"), was not expecting commit [`324420bf91f6`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=324420bf91f60582bb481133db9547111768ef17) ("arm64: add support for ioremap() block mappings") to be present; however, it is in this tree as commit [`37cbc7db8e4f`](https://android.googlesource.com/kernel/msm/+/37cbc7db8e4fa9b66e15cf8661383a6b51c9a3e7) ("arm64: add support for ioremap() block mappings") so adjust the context to match mainline's version.
