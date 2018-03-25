@@ -257,10 +257,10 @@
 
   * **Resolution:** Take left side (discard all changes)
 
-  * **Cause:** Stable commit [`c1b1c1af967a`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=c1b1c1af967a4890c88da05d5412a286ab72af5c) ("drm/msm: fix leak in failed get_pages") is already present in this tree as commit [`0bcaa07af26c`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=0bcaa07af26c3748fe4f838f69f2234b047bdb25) ("drm/msm: fix leak in failed get_pages"). Due to changes around each husk, git couldn't give a clean resolution.
+  * **Cause:** Stable commit [`c1b1c1af967a`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=c1b1c1af967a84e986a9e893b4eebf6f7a40045c) ("drm/msm: fix leak in failed get_pages") is already present in this tree as commit [`0bcaa07af26c`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=0bcaa07af26c3748fe4f838f69f2234b047bdb25) ("drm/msm: fix leak in failed get_pages"). Due to changes around each husk, git couldn't give a clean resolution.
 
 * `drivers/net/wireless/ath/regd.c`
 
   * **Resolution:** Take modified right side (make final diff match upstream's)
 
-  * **Cause:** Commit [`92072eb888a2`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=92072eb888a2117ac532a4bf44a70e4a443d3075) ("ath10k: Update world regulatory rules") trivially conflicts with commit [`597457667513`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=59745766751331bb82f471eef388e810b79eb5a4) ("ath: Fix updating radar flags for coutry code India"). Make the two coexist.
+  * **Cause:** Commit [`92072eb888a2`](https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=92072eb888a2117ac532a4bf44a70e4a443d3075) ("ath10k: Update world regulatory rules") trivially conflicts with commit [`597457667513`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=597457667513e7412989e3395044ac7ae8c2d9fb) ("ath: Fix updating radar flags for coutry code India"). Make the two coexist.

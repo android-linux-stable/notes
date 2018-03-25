@@ -131,4 +131,4 @@
 
   * **Resolution:** Take both sides (make final diff match upstream's)
 
-  * **Cause:** Commit [`a808f9895c87`](https://android.googlesource.com/kernel/msm/+/a808f9895c87773833650271eb7c5281fbc0d8ff) ("drm/msm: Use dma_sync_sg_for_device() to flush cache for new buffers") changed one of the sections modified by stable commit [`c1b1c1af967a`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=c1b1c1af967a4890c88da05d5412a286ab72af5c) ("drm/msm: fix leak in failed get_pages"), requiring a slight context change.
+  * **Cause:** Commit [`a808f9895c87`](https://android.googlesource.com/kernel/msm/+/a808f9895c87773833650271eb7c5281fbc0d8ff) ("drm/msm: Use dma_sync_sg_for_device() to flush cache for new buffers") changed one of the sections modified by stable commit [`c1b1c1af967a`](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/commit/?id=c1b1c1af967a84e986a9e893b4eebf6f7a40045c) ("drm/msm: fix leak in failed get_pages"), requiring a slight context change.
