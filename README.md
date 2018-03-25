@@ -28,8 +28,9 @@ Each tree will have both OEM and linux-stable updates merged promptly. The branc
 * [OnePlus 5 and 5T](https://github.com/android-linux-stable/op5) ([upstream source](https://github.com/OnePlusOSS/android_kernel_oneplus_msm8998))
 * [Pixel and Pixel XL](https://github.com/android-linux-stable/marlin) ([upstream source](https://android.googlesource.com/kernel/msm/))
 * [Pixel 2 and Pixel 2 XL](https://github.com/android-linux-stable/wahoo) ([upstream source](https://android.googlesource.com/kernel/msm/))
+* [Xiaomi Mi A1](https://github.com/android-linux-stable/tissot) ([upstream source](https://github.com/MiCode/Xiaomi_Kernel_OpenSource))
 
-The lineage-15.1 branches will not have conflict notes but they generally follow the MSM trees.
+The android-8.1 and lineage-15.1 branches will not have conflict notes but they generally follow the MSM trees. As new trees get added, I may stop adding new conflict notes. If you have a question about a specific conflict, either create an issue in the repository or contact me using one of the methods below.
 
 If you are a custom kernel or ROM developer with a 3.18 or 4.4 kernel and want linux-stable merged into your repo(s), please let me know on either [Telegram](https://t.me/nathanchance), [Twitter](https://twitter.com/nathanchance), or [XDA](https://forum.xda-developers.com/member.php?u=6842057). I am happy to merge it into your trees and either pull request you or ping you with updates automatically.
 
