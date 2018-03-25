@@ -72,5 +72,5 @@ find ./ -name "*.ko" -exec out/scripts/sign-file sha512 out/certs/signing_key.pe
 
 * To flash the kernel and accompanying modules, use [AnyKernel2](https://github.com/osm0sis/AnyKernel2) and [TWRP](https://twrp.me/oneplus/oneplus5.html). The README explains how to properly setup AK2 and an example tree is available in [my fork](https://github.com/nathanchance/AnyKernel2/tree/op5-flash-8.0.0). Use this one-liner in your kernel tree to move all kernel modules to the AnyKernel folder:
 ```bash
-find ./ -name "*.ko" -exec cp {} <anykernel_folder>/modules \;
+find ./ -name "*.ko" -exec cp {} <anykernel_folder>/modules/system/lib/modules \;
 ```
