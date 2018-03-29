@@ -1,0 +1,25 @@
+# msm-3.18
+
+* Device homepage: N/A
+
+* Branch information
+
+  * `kernel.lnx.3.18.r22-rel`
+
+    * Status: Discontinued
+
+    * Upstream location: https://source.codeaurora.org/quic/la/kernel/msm-3.18/log/?h=kernel.lnx.3.18.r22-rel
+
+    * Current kernel version (upstream): 3.18.71
+
+    * Current kernel version (android-linux-stable): 3.18.93
+
+  * `kernel.lnx.3.18.r33-rel`
+
+    * Status: Supported
+
+    * Upstream location: https://source.codeaurora.org/quic/la/kernel/msm-3.18/log/?h=kernel.lnx.3.18.r33-rel
+
+    * Current kernel version (upstream): 3.18.71
+
+    * Current kernel version (android-linux-stable): 3.18.102

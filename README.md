@@ -2,37 +2,22 @@
 
 These are markdown pages offering some notes about what linux-stable is, how you should be using it, and issue resolution notes. Please read this whole page if nothing else!
 
+TL;DR: linux-stable is important for stability and security. If you are a custom kernel or ROM developer with a 3.18 or 4.4 kernel and want linux-stable merged into your repo(s), you can either use these trees as a base or merge them into your own. If you have neither the time nor the confidence to get it right, please let me know via one of the methods below. I am happy to merge it into your trees and either pull request you or ping you with updates automatically.
+
 
 # Index
-
 
 * `info:` These are pages dedicated to answering what this stuff is and why it is important. Both users and developers should read these! If your kernel developer doesn't care for this process after reading this, they don't care about your security or stability...
 
 * `process:` This section goes over how to get a kernel up to date with linux-stable, step by step, as well as providing helpful tips and tricks.
 
-* `conflict-notes:` These pages document resolutions of all the conflicts during each merge, including why the conflict occurred and how it was resolved.
+* `trees:` This section includes notes on each tree, including what phone it is for, the upstream repo, and the currently supported branches.
 
-* `usability-notes:` Some of these trees do not contain everything needed to boot and use the device as normal in their current form. Since these kernels are designed to be used as a base for others or merged into existing working kernels, those commits will not be added. Instead, I give notes that can be used to get everything working properly.
+* `conflict-notes:` These pages document the conflicts during each merge (why the conflict occurred and how it was resolved). Please note, not all devices will have these as they take a lot of time. Reach out to me using one of the methods below if you have any questions!
+
+* `usability-notes:` Some of these trees do not contain everything needed to boot and use the device as normal in their current form. Since these kernels are designed to be used as a base for others or merged into existing working kernels, those commits will not be added. Instead, I give notes that can be used to get everything working properly. I only do usability notes for devices I physically own; if you own a device in this list and there are quirks that you know of that need mentioning, feel free to contribute!
 
 Each subfolder has its own index if you want more details!
-
-
-# Available trees
-
-Each tree will have both OEM and linux-stable updates merged promptly. The branch the tree is based on will be the same as its name upstream.
-
-* [Essential Phone](https://github.com/android-linux-stable/mata) ([upstream source](https://github.com/LineageOS/android_kernel_essential_msm8998))
-* [msm-3.18](https://github.com/android-linux-stable/msm-3.18) ([upstream source](https://source.codeaurora.org/quic/la/kernel/msm-3.18))
-* [msm-4.4](https://github.com/android-linux-stable/msm-4.4) ([upstream source](https://source.codeaurora.org/quic/la/kernel/msm-4.4))
-* [OnePlus 3 and 3T](https://github.com/android-linux-stable/op3) ([upstream source](https://github.com/OnePlusOSS/android_kernel_oneplus_msm8996))
-* [OnePlus 5 and 5T](https://github.com/android-linux-stable/op5) ([upstream source](https://github.com/OnePlusOSS/android_kernel_oneplus_msm8998))
-* [Pixel and Pixel XL](https://github.com/android-linux-stable/marlin) ([upstream source](https://android.googlesource.com/kernel/msm/))
-* [Pixel 2 and Pixel 2 XL](https://github.com/android-linux-stable/wahoo) ([upstream source](https://android.googlesource.com/kernel/msm/))
-* [Xiaomi Mi A1](https://github.com/android-linux-stable/tissot) ([upstream source](https://github.com/MiCode/Xiaomi_Kernel_OpenSource))
-
-The android-8.1 and lineage-15.1 branches will not have conflict notes but they generally follow the MSM trees. As new trees get added, I may stop adding new conflict notes. If you have a question about a specific conflict, either create an issue in the repository or contact me using one of the methods below.
-
-If you are a custom kernel or ROM developer with a 3.18 or 4.4 kernel and want linux-stable merged into your repo(s), please let me know on either [Telegram](https://t.me/nathanchance), [Twitter](https://twitter.com/nathanchance), or [XDA](https://forum.xda-developers.com/member.php?u=6842057). I am happy to merge it into your trees and either pull request you or ping you with updates automatically.
 
 
 ## How to use them
@@ -76,6 +61,20 @@ git merge v<version>
 
 You can use [the script](https://github.com/android-linux-stable/script) to do this automatically.
 
+
+# Getting help
+
+If you need help with merging, I request you ask for it via one of these public methods:
+
+* [XDA thread](https://forum.xda-developers.com/android/software-hacking/reference-how-to-upstream-android-kernel-t3626913)
+* [Telegram channel](https://t.me/joinchat/C1UAJ1EMSX31PCFdwLnOSg)
+* A GitHub issue in the repo in question
+
+For all other questions/requests, you can reach out to me via:
+
+* [Telegram](https://t.me/nathanchance)
+* [Twitter](https://twitter.com/nathanchance)
+* [XDA](https://forum.xda-developers.com/member.php?u=6842057)
 
 # Other notes
 
