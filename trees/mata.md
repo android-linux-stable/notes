@@ -6,10 +6,10 @@
 
   * `lineage-15.1`
 
-    * Status: Supported
+    * Status: Discontinued as of April 11th, 2018
 
     * Upstream location: https://github.com/LineageOS/android_kernel_essential_msm8998/commits/lineage-15.1
 
-    * Current kernel version (upstream): 4.4.78
+    * Current kernel version (upstream): 4.4.126
 
-    * Current kernel version (android-linux-stable): 4.4.127
+    * Current kernel version (android-linux-stable): N/A
