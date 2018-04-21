@@ -6,13 +6,9 @@
 
   * `android-8.1`
 
-    * Status: Supported
+    * Status: Archived as of April 21st, 2018 due to linux-stable being merged upstream
 
     * Upstream location: https://github.com/omnirom/android_kernel_xiaomi_msm8998/commits/android-8.1
-
-    * Current kernel version (upstream): 4.4.78
-
-    * Current kernel version (android-linux-stable): 4.4.127
 
   * `sagit-o-oss`
 
