@@ -26,13 +26,9 @@
 
   * `oneplus/QC8998_O_8.0`
 
-    * Status: Supported
+    * Status: Discontinued as of April 24th, 2018; superceded by `oneplus/QC8998_O_8.1` due to OxygenOS 5.1.0
 
     * Upstream location: https://github.com/OnePlusOSS/android_kernel_oneplus_msm8998/commits/oneplus/QC8998_O_8.0
-
-    * Current kernel version (upstream): 4.4.78
-
-    * Current kernel version (android-linux-stable): 4.4.129
 
   * `oneplus/QC8998_O_8.1`
 
