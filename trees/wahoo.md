@@ -12,7 +12,7 @@
 
     * Current kernel version (upstream): 4.4.88
 
-    * Current kernel version (android-linux-stable): 4.4.129
+    * Current kernel version (android-linux-stable): 4.4.130
 
   * `android-msm-wahoo-4.4-oreo-mr1`
 
@@ -22,7 +22,7 @@
 
     * Current kernel version (upstream): 4.4.88
 
-    * Current kernel version (android-linux-stable): 4.4.129
+    * Current kernel version (android-linux-stable): 4.4.130
 
   * `android-msm-wahoo-4.4-oreo-dr1`
 
