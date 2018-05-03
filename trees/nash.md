@@ -12,7 +12,7 @@
 
     * Current kernel version (upstream): 4.4.78
 
-    * Current kernel version (android-linux-stable): 4.4.130
+    * Current kernel version (android-linux-stable): 4.4.131
 
   * `oreo-8.0.0-release-nash`
 
@@ -22,4 +22,4 @@
 
     * Current kernel version (upstream): 4.4.78
 
-    * Current kernel version (android-linux-stable): 4.4.130
+    * Current kernel version (android-linux-stable): 4.4.131
