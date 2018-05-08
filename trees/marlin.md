@@ -12,7 +12,7 @@
 
     * Current kernel version (upstream): 3.18.70
 
-    * Current kernel version (android-linux-stable): 3.10.108
+    * Current kernel version (android-linux-stable): 3.18.108
 
   * `android-msm-marlin-3.18-oreo-m2`
 
@@ -22,7 +22,7 @@
 
     * Current kernel version (upstream): 3.18.70
 
-    * Current kernel version (android-linux-stable): 3.10.108
+    * Current kernel version (android-linux-stable): 3.18.108
 
   * `android-msm-marlin-3.18-oreo-mr1`
 
@@ -32,4 +32,4 @@
 
     * Current kernel version (upstream): 3.18.70
 
-    * Current kernel version (android-linux-stable): 3.10.102
+    * Current kernel version (android-linux-stable): 3.18.102
