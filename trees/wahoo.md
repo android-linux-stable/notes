@@ -4,9 +4,19 @@
 
 * Branch information
 
-  * `android-msm-wahoo-4.4-oreo-m2`
+  * `android-msm-wahoo-4.4`
 
     * Status: Supported
+
+    * Upstream location: https://android.googlesource.com/kernel/msm/+/android-8.1.0_r0.55
+
+    * Current kernel version (upstream): 4.4.88
+
+    * Current kernel version (android-linux-stable): 4.4.131
+
+  * `android-msm-wahoo-4.4-oreo-m2`
+
+    * Status: Renamed to `android-msm-wahoo-4.4` on May 14th, 2018
 
     * Upstream location: https://android.googlesource.com/kernel/msm/+/android-msm-wahoo-4.4-oreo-m2
 
