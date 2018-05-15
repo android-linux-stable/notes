@@ -4,9 +4,19 @@
 
 * Branch information
 
-  * `android-msm-angler-3.10-oreo-m3`
+  * `android-msm-angler-3.10`
 
     * Status: Supported
+
+    * Upstream location: https://android.googlesource.com/kernel/msm/+/android-8.1.0_r0.50
+
+    * Current kernel version (upstream): 3.10.73
+
+    * Current kernel version (android-linux-stable): 3.10.108
+
+  * `android-msm-angler-3.10-oreo-m3`
+
+    * Status: Renamed to `android-msm-angler-3.10` on May 14th, 2018
 
     * Upstream location: https://android.googlesource.com/kernel/msm/+/android-msm-angler-3.10-oreo-m3
 
