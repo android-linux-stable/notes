@@ -4,9 +4,19 @@
 
 * Branch information
 
-  * `android-msm-marlin-3.18-oreo-m4`
+  * `android-msm-marlin-3.18`
 
     * Status: Supported
+
+    * Upstream location: https://android.googlesource.com/kernel/msm/+/android-8.1.0_r0.54
+
+    * Current kernel version (upstream): 3.18.70
+
+    * Current kernel version (android-linux-stable): 3.10.108
+
+  * `android-msm-marlin-3.18-oreo-m4`
+
+    * Status: Renamed to `android-msm-marlin-3.18` on May 14th, 2018
 
     * Upstream location: https://android.googlesource.com/kernel/msm/+/android-msm-marlin-3.18-oreo-m4
 
