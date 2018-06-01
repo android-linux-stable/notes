@@ -12,7 +12,7 @@
 
     * Current kernel version (upstream): 4.4.88
 
-    * Current kernel version (android-linux-stable): 4.4.133
+    * Current kernel version (android-linux-stable): 4.4.135
 
   * `android-msm-wahoo-4.4-oreo-m2`
 

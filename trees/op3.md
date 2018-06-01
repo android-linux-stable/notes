@@ -12,7 +12,7 @@
 
     * Current kernel version (upstream): 3.18.108
 
-    * Current kernel version (android-linux-stable): 3.18.110
+    * Current kernel version (android-linux-stable): 3.18.112
 
   * `lineage-15.1`
 
@@ -22,7 +22,7 @@
 
     * Current kernel version (upstream): 3.18.71
 
-    * Current kernel version (android-linux-stable): 3.18.110
+    * Current kernel version (android-linux-stable): 3.18.112
 
   * `oneplus/QC8996_O_8.0.0`
 
@@ -32,7 +32,7 @@
 
     * Current kernel version (upstream): 3.18.66
 
-    * Current kernel version (android-linux-stable): 3.18.110
+    * Current kernel version (android-linux-stable): 3.18.112
 
   * `oneplus/QC8996_O_8.0.0_Beta`
 
@@ -42,4 +42,4 @@
 
     * Current kernel version (upstream): 3.18.66
 
-    * Current kernel version (android-linux-stable): 3.18.110
+    * Current kernel version (android-linux-stable): 3.18.112
