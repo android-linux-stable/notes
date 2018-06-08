@@ -12,7 +12,7 @@
 
     * Current kernel version (upstream): 4.4.78
 
-    * Current kernel version (android-linux-stable): 4.4.135
+    * Current kernel version (android-linux-stable): 4.4.136
 
   * `kernel.lnx.4.4.r18-rel`
 
