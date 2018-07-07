@@ -12,4 +12,4 @@
 
     * Current kernel version (upstream): 4.9.65
 
-    * Current kernel version (android-linux-stable): 4.9.107
+    * Current kernel version (android-linux-stable): 4.9.111

@@ -12,7 +12,7 @@
 
     * Current kernel version (upstream): 4.4.88
 
-    * Current kernel version (android-linux-stable): 4.4.136
+    * Current kernel version (android-linux-stable): 4.4.139
 
   * `lineage-15.1`
 
@@ -22,7 +22,7 @@
 
     * Current kernel version (upstream): 4.4.100
 
-    * Current kernel version (android-linux-stable): 4.4.136
+    * Current kernel version (android-linux-stable): 4.4.139
 
   * `oneplus/QC8998_O_8.0`
 
@@ -38,4 +38,4 @@
 
     * Current kernel version (upstream): 4.4.78
 
-    * Current kernel version (android-linux-stable): 4.4.136
+    * Current kernel version (android-linux-stable): 4.4.139
