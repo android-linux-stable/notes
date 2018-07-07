@@ -11,6 +11,7 @@ All trees will have linux-stable promptly merged into them along with upstream u
 * [Moto Z2 Force](nash.md)
 * [msm-3.18](msm-3.18.md)
 * [msm-4.4](msm-4.4.md)
+* [msm-4.9](msm-4.9.md)
 * [OnePlus 3/T](op3.md)
 * [OnePlus 5/T](op5.md)
 * [OnePlus 6](op6.md)
