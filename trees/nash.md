@@ -6,13 +6,9 @@
 
   * `lineage-15.1`
 
-    * Status: Supported
+    * Status: Archived as of July 12th, 2018 due to linux-stable being merged upstream
 
     * Upstream location: https://github.com/LineageOS/android_kernel_motorola_msm8998/commits/lineage-15.1
-
-    * Current kernel version (upstream): 4.4.78
-
-    * Current kernel version (android-linux-stable): 4.4.140
 
   * `oreo-8.0.0-release-nash`
 
