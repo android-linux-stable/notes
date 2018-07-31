@@ -9,7 +9,3 @@
     * Status: Supported
 
     * Upstream location: https://github.com/MiCode/Xiaomi_Kernel_OpenSource/commits/tissot-o-oss
-
-    * Current kernel version (upstream): 3.18.66
-
-    * Current kernel version (android-linux-stable): 3.18.115

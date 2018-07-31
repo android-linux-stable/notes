@@ -15,7 +15,3 @@
     * Status: Supported
 
     * Upstream location: https://github.com/MotorolaMobilityLLC/kernel-msm/commits/oreo-8.0.0-release-nash
-
-    * Current kernel version (upstream): 4.4.78
-
-    * Current kernel version (android-linux-stable): 4.4.140
