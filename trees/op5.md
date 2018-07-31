@@ -27,3 +27,9 @@
     * Status: Supported
 
     * Upstream location: https://github.com/OnePlusOSS/android_kernel_oneplus_msm8998/commits/oneplus/QC8998_O_8.1
+
+  * `oneplus/QC8998_O_8.1_Beta`
+
+    * Status: Supported
+
+    * Upstream location: https://github.com/OnePlusOSS/android_kernel_oneplus_msm8998/commits/oneplus/QC8998_O_8.1_Beta
