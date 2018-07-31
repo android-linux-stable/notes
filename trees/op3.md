@@ -24,6 +24,6 @@
 
   * `oneplus/QC8996_O_8.0.0_Beta`
 
-    * Status: Supported
+    * Status: Discontinued as of July 31st, 2018 due to a lack of updates from OnePlus.
 
     * Upstream location: https://github.com/OnePlusOSS/android_kernel_oneplus_msm8996/tree/oneplus/QC8996_O_8.0.0_Beta
