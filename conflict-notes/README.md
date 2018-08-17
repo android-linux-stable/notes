@@ -1,6 +1,6 @@
 # Index of conflict-notes
 
-NOTE: As of 3.18.103 and 4.4.127, these notes will no longer be updated since it takes me way too long to document them all. You can see my conflict resolutions in [my scripts repository](https://github.com/nathanchance/scripts/tree/master/als-patches) and you are free to reach out to me if you have any questions.
+NOTE: As of 3.18.103 and 4.4.127, these notes will no longer be updated since it takes me way too long to document them all. You can see my conflict resolutions in [my stable-patches repository](https://github.com/nathanchance/stable-patches) and you are free to reach out to me if you have any questions.
 
 - [`marlin`](marlin) includes notes for the [the marlin repository](https://github.com/android-linux-stable/marlin) (stock Pixel (XL) source)
 
