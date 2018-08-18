@@ -15,6 +15,7 @@ All trees will have linux-stable promptly merged into them along with upstream u
 * [OnePlus 3/T](op3.md)
 * [OnePlus 5/T](op5.md)
 * [OnePlus 6](op6.md)
+* [Xiaomi Mi Mix 2S](polaris.md)
 * [Xiaomi Mi 6 and Mi Mix 2](sagit.md)
 * [Xiaomi Mi A1](tissot.md)
 * [Xiaomi Redmi Note 5 and Mi 6X1](whyred.md)
