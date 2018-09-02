@@ -6,9 +6,15 @@
 
   * `android-8.1`
 
-    * Status: Supported
+    * Status: Superseded by android-9.0
 
     * Upstream location: https://github.com/omnirom/android_kernel_oneplus_sdm845/commits/android-8.1
+
+  * `android-9.0`
+
+    * Status: Supported
+
+    * Upstream location: https://github.com/omnirom/android_kernel_oneplus_sdm845/commits/android-9.0
 
   * `lineage-15.1`
 
