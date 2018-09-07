@@ -27,3 +27,9 @@
     * Status: Supported
 
     * Upstream location: https://github.com/OnePlusOSS/android_kernel_oneplus_sdm845/commits/oneplus/SDM845_O_8.1
+
+  * `oneplus/SDM845_P_9.0_Beta`
+
+    * Status: Supported
+
+    * Upstream location: https://github.com/OnePlusOSS/android_kernel_oneplus_sdm845/commits/oneplus/SDM845_P_9.0_Beta

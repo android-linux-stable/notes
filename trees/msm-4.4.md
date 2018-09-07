@@ -4,6 +4,18 @@
 
 * Branch information
 
+  * `kernel.lnx.4.4.r35-rel`
+
+    * Status: Supported
+
+    * Upstream location: https://source.codeaurora.org/quic/la/kernel/msm-4.4/log?h=kernel.lnx.4.4.r35-rel
+
+  * `kernel.lnx.4.4.r34-rel`
+
+    * Status: Supported
+
+    * Upstream location: https://source.codeaurora.org/quic/la/kernel/msm-4.4/log?h=kernel.lnx.4.4.r34-rel
+
   * `kernel.lnx.4.4.r27-rel`
 
     * Status: Supported

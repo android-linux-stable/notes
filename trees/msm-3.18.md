@@ -4,6 +4,12 @@
 
 * Branch information
 
+  * `kernel.lnx.3.18.r34-rel`
+
+    * Status: Supported
+
+    * Upstream location: https://source.codeaurora.org/quic/la/kernel/msm-3.18/log/?h=kernel.lnx.3.18.r34-rel
+
   * `kernel.lnx.3.18.r33-rel`
 
     * Status: Supported
