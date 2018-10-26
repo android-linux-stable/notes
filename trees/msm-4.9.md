@@ -8,4 +8,4 @@
 
     * Status: Supported
 
-    * Upstream location: https://source.codeaurora.org/quic/la/kernel/msm-4.4/log?h=kernel.lnx.4.9.r7-rel
+    * Upstream location: https://source.codeaurora.org/quic/la/kernel/msm-4.9/log?h=kernel.lnx.4.9.r7-rel
