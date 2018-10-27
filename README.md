@@ -35,7 +35,7 @@ Should you chose to use the kernel as a base for your own, either fork the kerne
 
 ```bash
 git fetch <android-linux-stable_repo_url> <branch_to_use>
-git branch -b <your_branch_name> FETCH_HEAD
+git checkout -b <your_branch_name> FETCH_HEAD
 git push --set-upstream origin <your_branch_name>
 ```
 
