@@ -55,8 +55,8 @@ If you want to do the merges yourself, you can add linux-stable as a remote and 
 
 ```bash
 git remote add linux-stable https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/
-git fetch linux-stable
-git merge v<version>
+git fetch linux-stable v<version>
+git merge FETCH_HEAD
 ```
 
 You can use [the script](https://github.com/android-linux-stable/script) to do this automatically.
