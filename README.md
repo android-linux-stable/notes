@@ -67,7 +67,7 @@ You can use [the script](https://github.com/android-linux-stable/script) to do t
 If you need help with merging, I request you ask for it via one of these public methods:
 
 * [XDA thread](https://forum.xda-developers.com/android/software-hacking/reference-how-to-upstream-android-kernel-t3626913)
-* [Telegram channel](https://t.me/joinchat/C1UAJ1EMSX31PCFdwLnOSg)
+* [Telegram channel](https://t.me/joinchat/C1UAJ1EMSX2znEs7CJEc2A)
 * A GitHub issue in the repo in question
 
 For all other questions/requests, you can reach out to me via:
