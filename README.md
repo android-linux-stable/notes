@@ -1,5 +1,5 @@
 # LINUX-STABLE NOTES
-
+# linux-stable nots
 
 These are markdown pages offering some notes about what linux-stable is, how you should be using it, and issue resolution notes. Please read this whole page if nothing else!
 
